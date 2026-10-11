@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/temple-location",
+    "title": "Temple Location",
+    "category": "pm-entities",
+    "icon": "location-alt",
+    "description": "Displays map and geographic data.",
+    "render": "file:./render.php"
+}

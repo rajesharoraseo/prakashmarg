@@ -1,0 +1,9 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pm/reading-toolbar",
+    "title": "Reading Toolbar",
+    "category": "pm-blocks",
+    "icon": "controls-play",
+    "render": "file:./render.php"
+}

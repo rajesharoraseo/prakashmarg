@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/festival-hero",
+    "title": "Festival Hero",
+    "category": "pm-entities",
+    "icon": "calendar-alt",
+    "description": "Displays the Festival Name, Month, and Significance.",
+    "render": "file:./render.php"
+}

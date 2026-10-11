@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/temple-quick-facts",
+    "title": "Temple Quick Facts",
+    "category": "pm-entities",
+    "icon": "info",
+    "description": "Displays Darshan Timings, Entry Fees, and Dress Code.",
+    "render": "file:./render.php"
+}

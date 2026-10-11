@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/festival-relationships",
+    "title": "Festival Relationships",
+    "category": "pm-entities",
+    "icon": "networking",
+    "description": "Displays related Deities for a Festival.",
+    "render": "file:./render.php"
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>दैनिक जीवन में ध्यान का महत्व - Prakash Marg</title>
+    <meta name="description" content="आधुनिक जीवनशैली में मानसिक शांति प्राप्त करने के लिए ध्यान (Meditation) सबसे सरल और शक्तिशाली माध्यम है।">
+    <link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/custom.css">
+    <script src="assets/js/theme.js"></script>
+</head>
+<body class="bg-cream dark:bg-navy font-sans text-darkbrown dark:text-cream dark:text-cream antialiased selection:bg-saffron selection:text-white flex flex-col min-h-screen">
+
+    <!-- HEADER (Identical) -->
+    <header class="sticky top-0 z-50 bg-cream/90 dark:bg-navy/90 backdrop-blur-md border-b border-sandalwood/20 shadow-soft w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-saffron flex items-center justify-center text-white font-bold text-xl shadow-glow group-hover:scale-105 transition-transform">ॐ</div>
+                    <div>
+                        <span class="font-hindi-serif font-bold text-2xl tracking-tight text-darkbrown dark:text-cream dark:text-cream block leading-none">Prakash Marg</span>
+                        <span class="font-hindi text-sm text-saffron font-medium">प्रकाश की ओर एक कदम</span>
+                    </div>
+                </a>
+                <nav class="hidden md:flex space-x-8 items-center h-full">
+                    <a href="index.html" class="text-darkbrown dark:text-cream dark:text-cream hover:text-saffron font-medium transition-colors">Home</a>
+                    <div class="relative group h-full flex items-center">
+                        <button class="flex items-center text-saffron font-medium transition-colors h-full">
+                            ज्ञान (Knowledge)
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute left-0 top-full w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50 pt-2">
+                            <div class="bg-white dark:bg-navy-light rounded-xl shadow-soft border border-sandalwood/20 overflow-hidden">
+                                <a href="blog.html" class="block px-4 py-3 text-sm text-saffron bg-saffron-light/10 transition-colors">Blog & Articles</a>
+                                <a href="chalisa-library.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Chalisa Sangrah</a>
+                                <a href="puja-vidhi.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Puja Vidhi</a>
+                                <a href="#" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Vrat & Tyohar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="tools.html" class="text-darkbrown dark:text-cream dark:text-cream hover:text-saffron font-medium transition-colors">Spiritual Tools</a>
+                    <a href="shop.html" class="text-darkbrown dark:text-cream dark:text-cream hover:text-saffron font-medium transition-colors">eBooks</a>
+                </nav>
+
+                <div class="flex items-center gap-2">
+                    <button id="theme-toggle" aria-label="Toggle Dark Mode" class="p-2 rounded-full bg-sandalwood/10 dark:bg-navy-light text-darkbrown dark:text-gold hover:bg-sandalwood/30 transition-colors">
+                        <span id="theme-toggle-light-icon" class="hidden">🌞</span>
+                        <span id="theme-toggle-dark-icon">🌙</span>
+                    </button>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-darkbrown dark:text-cream dark:text-cream hover:text-saffron p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-navy-light dark:bg-navy-light border-t border-sandalwood/20 absolute w-full shadow-soft">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Home</a>
+                <a href="blog.html" class="block px-3 py-3 rounded-md text-base font-medium text-saffron bg-saffron-light/10">Blog & Articles</a>
+                <a href="chalisa-library.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Chalisa Sangrah</a>
+                <a href="puja-vidhi.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Puja Vidhi</a>
+                <a href="tools.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Spiritual Tools</a>
+                <a href="shop.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream dark:text-cream hover:text-saffron hover:bg-sandalwood/10">eBooks</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Progress Bar -->
+        <div class="fixed top-20 left-0 w-full h-1 bg-sandalwood/20 z-40">
+            <div id="reading-progress" class="h-full bg-saffron w-0 transition-all duration-150"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+                
+                <!-- Main Content Area -->
+                <article class="lg:col-span-8">
+                    
+                    <!-- Article Header -->
+                    <header class="text-center mb-12 border-b border-sandalwood/30 pb-12">
+                        <a href="blog.html" id="dynamic-category" class="inline-block text-saffron text-sm font-bold uppercase tracking-wider mb-6 hover:text-saffron-dark transition-colors">Spiritual Lifestyle</a>
+                        <h1 id="dynamic-title" class="text-4xl md:text-5xl lg:text-6xl font-hindi-serif font-bold text-darkbrown dark:text-cream dark:text-cream mb-6 leading-tight">
+                            दैनिक जीवन में ध्यान का महत्व और इसके वैज्ञानिक लाभ
+                        </h1>
+                <p id="dynamic-subtitle" class="text-xl md:text-2xl text-darkbrown dark:text-cream-light font-hindi leading-relaxed max-w-3xl mx-auto mb-8">
+                    आधुनिक जीवनशैली में मानसिक शांति प्राप्त करने के लिए ध्यान (Meditation) सबसे सरल और शक्तिशाली माध्यम है।
+                </p>
+                
+                <div class="flex items-center justify-center gap-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-saffron/10 border border-saffron/20 flex items-center justify-center text-saffron font-bold text-xl">PM</div>
+                        <div class="text-left">
+                            <p class="text-sm font-bold text-darkbrown dark:text-cream">Prakash Marg Editorial</p>
+                            <p class="text-xs text-darkbrown-light dark:text-cream-light">May 18, 2026 • 5 min read</p>
+                        </div>
+                    </div>
+                    <div class="h-8 w-px bg-sandalwood/30 hidden sm:block"></div>
+                    <button id="save-article-btn" class="flex items-center gap-2 border border-sandalwood/50 bg-white dark:bg-navy-light px-4 py-2 rounded-full text-sm font-bold text-darkbrown dark:text-cream hover:text-saffron dark:hover:text-gold hover:border-saffron transition-all group">
+                        <span id="save-icon-outline" class="text-lg group-hover:scale-110 transition-transform">☆</span>
+                        <span id="save-icon-filled" class="hidden text-lg text-saffron dark:text-gold group-hover:scale-110 transition-transform">⭐</span>
+                        <span id="save-text">Save</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div id="dynamic-content" class="prose prose-lg prose-headings:font-hindi-serif prose-headings:text-darkbrown dark:text-cream dark:text-cream prose-p:font-hindi prose-p:text-darkbrown/90 prose-a:text-saffron hover:prose-a:text-saffron-dark max-w-none">
+                
+                <div id="dynamic-article-body">
+                    <p class="text-xl leading-relaxed mb-8">
+                        आज की भागदौड़ भरी जिंदगी में तनाव, चिंता और मानसिक अशांति एक आम बात हो गई है। ऐसे में 'ध्यान' (Meditation) वह प्राचीन और प्रामाणिक मार्ग है जो हमें हमारे भीतर की शांति से जोड़ता है।
+                    </p>
+
+                    <h2>ध्यान क्या है?</h2>
+                    <p>
+                        ध्यान केवल आँखें बंद करके बैठना नहीं है। यह मन को एकाग्र करने और विचारों के प्रति जागरूक होने की एक सतत प्रक्रिया है। भगवद्गीता में भगवान श्री कृष्ण कहते हैं:
+                    </p>
+                </div>
+
+                <!-- AdSense Placeholder: In-Article Responsive -->
+                <div class="my-8 w-full bg-cream-dark/20 border border-sandalwood/30 rounded-lg p-4 flex flex-col items-center justify-center min-h-[120px]">
+                    <span class="text-xs text-darkbrown dark:text-cream-light uppercase tracking-widest mb-2 font-bold">Advertisement</span>
+                    <div class="text-sandalwood font-medium">Google AdSense (Responsive)</div>
+                </div>
+
+                <blockquote class="border-l-4 border-saffron pl-6 my-8 italic text-xl font-hindi text-darkbrown">
+                    "मन की शांति ही सबसे बड़ा धन है। ध्यान और ईश्वर स्मरण से ही यह प्राप्त होती है।"
+                </blockquote>
+
+                <h2>ध्यान के वैज्ञानिक लाभ</h2>
+                <ul>
+                    <li><strong>तनाव में कमी:</strong> ध्यान करने से शरीर में कोर्टिसोल (Cortisol) हार्मोन का स्तर कम होता है, जो तनाव का मुख्य कारण है।</li>
+                    <li><strong>एकाग्रता में वृद्धि:</strong> नियमित ध्यान से मस्तिष्क की फोकस करने की क्षमता बढ़ती है।</li>
+                    <li><strong>नींद में सुधार:</strong> सोने से पहले 10 मिनट का ध्यान अनिद्रा की समस्या को दूर कर सकता है।</li>
+                </ul>
+
+                <h2>ध्यान कैसे शुरू करें?</h2>
+                <p>
+                    यदि आप ध्यान की शुरुआत कर रहे हैं, तो इन सरल चरणों का पालन करें:
+                </p>
+                <ol>
+                    <li>एक शांत स्थान चुनें जहाँ आपको कोई बाधा न हो।</li>
+                    <li>आरामदायक मुद्रा में बैठें। आप कुर्सी पर या ज़मीन पर कुशन रखकर बैठ सकते हैं।</li>
+                    <li>अपनी आँखें धीरे से बंद करें और अपनी श्वास पर ध्यान केंद्रित करें।</li>
+                    <li>विचारों को आने दें, उनसे लड़ें नहीं। बस उनका निरीक्षण करें और वापस अपनी श्वास पर लौट आएं।</li>
+                    <li>शुरुआत में केवल 5-10 मिनट का अभ्यास करें।</li>
+                </ol>
+
+                <!-- AdSense Placeholder: Bottom Leaderboard/Responsive -->
+                <div class="mt-12 w-full bg-cream-dark/20 border border-sandalwood/30 rounded-lg p-4 flex flex-col items-center justify-center min-h-[120px]">
+                    <span class="text-xs text-darkbrown dark:text-cream-light uppercase tracking-widest mb-2 font-bold">Advertisement</span>
+                    <div class="text-sandalwood font-medium">Google AdSense (Leaderboard)</div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="mt-16 border-t border-sandalwood/30 pt-12 faq-container">
+                    <h2 class="text-2xl md:text-3xl font-hindi-serif font-bold text-darkbrown dark:text-cream dark:text-cream mb-8 text-center">अक्सर पूछे जाने वाले प्रश्न (FAQs)</h2>
+                    
+                    <div class="space-y-4">
+                        <!-- FAQ Item 1 -->
+                        <div class="faq-item border border-sandalwood/30 rounded-xl overflow-hidden bg-white dark:bg-navy-light shadow-sm">
+                            <button class="faq-button w-full text-left px-6 py-5 flex justify-between items-center bg-cream dark:bg-navy hover:bg-saffron/5 transition-colors focus:outline-none focus:ring-2 focus:ring-saffron focus:ring-inset" aria-expanded="false" aria-controls="faq-answer-1">
+                                <span class="faq-question font-hindi font-bold text-darkbrown dark:text-cream dark:text-cream text-lg pr-4">ध्यान करने का सबसे अच्छा समय क्या है?</span>
+                                <svg class="faq-icon w-6 h-6 text-saffron transform transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div id="faq-answer-1" class="faq-answer hidden px-6 py-5 bg-white dark:bg-navy-light border-t border-sandalwood/10 text-darkbrown dark:text-cream-light font-hindi leading-relaxed">
+                                ध्यान करने का सबसे अच्छा समय सुबह ब्रह्म मुहूर्त (सूर्योदय से लगभग 1.5 घंटे पहले) माना जाता है। इस समय वातावरण शांत होता है और सकारात्मक ऊर्जा का स्तर उच्च होता है। हालाँकि, आप अपनी सुविधानुसार शाम के समय भी ध्यान कर सकते हैं।
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="faq-item border border-sandalwood/30 rounded-xl overflow-hidden bg-white dark:bg-navy-light shadow-sm">
+                            <button class="faq-button w-full text-left px-6 py-5 flex justify-between items-center bg-cream dark:bg-navy hover:bg-saffron/5 transition-colors focus:outline-none focus:ring-2 focus:ring-saffron focus:ring-inset" aria-expanded="false" aria-controls="faq-answer-2">
+                                <span class="faq-question font-hindi font-bold text-darkbrown dark:text-cream dark:text-cream text-lg pr-4">क्या मैं लेटकर ध्यान कर सकता हूँ?</span>
+                                <svg class="faq-icon w-6 h-6 text-saffron transform transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div id="faq-answer-2" class="faq-answer hidden px-6 py-5 bg-white dark:bg-navy-light border-t border-sandalwood/10 text-darkbrown dark:text-cream-light font-hindi leading-relaxed">
+                                यद्यपि लेटकर ध्यान (जैसे योग निद्रा) किया जा सकता है, लेकिन सामान्य ध्यान के लिए बैठकर रीढ़ की हड्डी सीधी रखना सबसे अच्छा है। लेटकर ध्यान करने से नींद आने की संभावना अधिक होती है।
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="faq-item border border-sandalwood/30 rounded-xl overflow-hidden bg-white dark:bg-navy-light shadow-sm">
+                            <button class="faq-button w-full text-left px-6 py-5 flex justify-between items-center bg-cream dark:bg-navy hover:bg-saffron/5 transition-colors focus:outline-none focus:ring-2 focus:ring-saffron focus:ring-inset" aria-expanded="false" aria-controls="faq-answer-3">
+                                <span class="faq-question font-hindi font-bold text-darkbrown dark:text-cream dark:text-cream text-lg pr-4">अगर ध्यान के दौरान बहुत विचार आएं तो क्या करें?</span>
+                                <svg class="faq-icon w-6 h-6 text-saffron transform transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div id="faq-answer-3" class="faq-answer hidden px-6 py-5 bg-white dark:bg-navy-light border-t border-sandalwood/10 text-darkbrown dark:text-cream-light font-hindi leading-relaxed">
+                                शुरुआत में विचारों का आना बहुत स्वाभाविक है। विचारों को रोकने की कोशिश न करें, बस उन्हें एक दर्शक की तरह देखें (साक्षी भाव) और फिर से अपना ध्यान अपनी श्वास या मंत्र पर ले आएं।
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- Sidebar Area -->
+        <aside class="lg:col-span-4 hidden lg:block">
+            <!-- AdSense Placeholder: Sticky 300x250 Sidebar -->
+            <div class="sticky top-28 bg-cream dark:bg-navy border border-sandalwood/30 rounded-lg p-4 flex flex-col items-center justify-center h-[250px] w-full max-w-[300px] mx-auto shadow-sm">
+                <span class="text-xs text-darkbrown dark:text-cream-light uppercase tracking-widest mb-2 font-bold">Advertisement</span>
+                <div class="text-sandalwood font-medium">Google AdSense<br>(300x250)</div>
+            </div>
+        </aside>
+
+        </div>
+    </div>
+</main>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkbrown text-cream pt-16 pb-8 border-t-4 border-saffron mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 rounded-full bg-saffron flex items-center justify-center text-white font-bold text-lg">ॐ</div>
+                        <span class="font-hindi-serif font-bold text-2xl text-white tracking-tight">Prakash Marg</span>
+                    </a>
+                    <p class="text-cream-dark/70 text-sm leading-relaxed mb-6 font-hindi">सनातन धर्म, भक्ति, और आध्यात्मिक जीवन के प्रामाणिक ज्ञान का अन्वेषण करें।</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold uppercase tracking-wider text-sm mb-6 border-b border-cream/10 pb-2 inline-block">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">About Us</a></li>
+                        <li><a href="blog.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Spiritual Blog</a></li>
+                        <li><a href="tools.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Daily Tools</a></li>
+                        <li><a href="shop.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">eBook Store</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold uppercase tracking-wider text-sm mb-6 border-b border-cream/10 pb-2 inline-block">Library</h4>
+                    <ul class="space-y-3">
+                        <li><a href="chalisa-library.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Chalisa Sangrah</a></li>
+                        <li><a href="#" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Mantra Learning</a></li>
+                        <li><a href="puja-vidhi.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Puja Guides</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold uppercase tracking-wider text-sm mb-6 border-b border-cream/10 pb-2 inline-block">Stay Inspired</h4>
+                    <form class="flex flex-col gap-2">
+                        <input type="email" placeholder="Email address" class="bg-white/10 border border-white/20 rounded px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-saffron">
+                        <button type="submit" class="bg-saffron hover:bg-saffron-dark text-white font-medium rounded px-4 py-2 text-sm transition-colors">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-cream-dark/50 text-xs">&copy; 2026 Prakash Marg. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="text-cream-dark/50 hover:text-cream text-xs transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-cream-dark/50 hover:text-cream text-xs transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Reading Progress Script
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const progress = document.getElementById("reading-progress");
+            if(progress) progress.style.width = scrolled + "%";
+        });
+    </script>
+</body>
+</html>

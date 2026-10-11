@@ -1,0 +1,8 @@
+{
+    "apiVersion": 3,
+    "name": "pm/panchang-widget",
+    "title": "Panchang Widget",
+    "category": "pm-homepage",
+    "icon": "calendar-alt",
+    "render": "file:./render.php"
+}

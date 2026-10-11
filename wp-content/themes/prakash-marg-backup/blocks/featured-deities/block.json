@@ -1,0 +1,14 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pm/featured-deities",
+    "title": "Featured Deities",
+    "category": "prakash-marg",
+    "icon": "universal-access-alt",
+    "description": "Displays featured deities on the homepage.",
+    "supports": {
+        "html": false,
+        "align": ["wide", "full"]
+    },
+    "render": "file:./render.php"
+}

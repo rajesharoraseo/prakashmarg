@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/temple-breadcrumb",
+    "title": "Temple Breadcrumb",
+    "category": "pm-entities",
+    "icon": "arrow-right-alt2",
+    "description": "Outputs semantic JSON-LD breadcrumb.",
+    "render": "file:./render.php"
+}

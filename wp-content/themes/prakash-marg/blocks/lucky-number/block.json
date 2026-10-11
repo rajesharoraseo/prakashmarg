@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "pm/lucky-number",
+  "title": "Lucky Number",
+  "category": "prakash-marg",
+  "icon": "star-filled",
+  "description": "A daily numerology lucky number generator.",
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "render": "file:./render.php"
+}

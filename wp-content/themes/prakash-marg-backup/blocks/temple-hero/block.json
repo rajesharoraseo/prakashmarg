@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/temple-hero",
+    "title": "Temple Hero",
+    "category": "pm-entities",
+    "icon": "location",
+    "description": "Displays the Temple Name, Location, and Deity.",
+    "render": "file:./render.php"
+}

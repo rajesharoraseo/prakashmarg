@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/temple-hero",
+    "title": "Temple Hero",
+    "category": "pm-entities",
+    "icon": "building",
+    "description": "Displays the Temple Name, City, and Deity overlay on the featured image.",
+    "render": "file:./render.php"
+}

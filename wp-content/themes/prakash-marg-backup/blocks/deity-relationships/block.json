@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/deity-relationships",
+    "title": "Deity Relationships",
+    "category": "pm-entities",
+    "icon": "networking",
+    "description": "Displays related Temples and Scriptures for a Deity.",
+    "render": "file:./render.php"
+}

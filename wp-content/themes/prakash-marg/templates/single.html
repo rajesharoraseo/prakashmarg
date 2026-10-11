@@ -1,0 +1,174 @@
+﻿<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:html -->
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+the_post();
+
+$post_id    = get_the_ID();
+$title      = get_the_title();
+$content    = get_the_content();
+$date       = get_the_date( 'j F Y' );
+$author     = get_the_author();
+$thumb      = get_the_post_thumbnail_url( $post_id, 'full' );
+$cats       = get_the_category( $post_id );
+$cat_name   = ! empty( $cats ) ? $cats[0]->name : 'सामान्य';
+$cat_url    = ! empty( $cats ) ? get_category_link( $cats[0]->term_id ) : home_url( '/blog' );
+$word_count = str_word_count( wp_strip_all_tags( $content ) );
+$read_time  = max( 1, (int) ceil( $word_count / 200 ) );
+
+$emojis = [ 'भजन' => '🎵', 'चालीसा' => '📖', 'पूजा' => '🪔', 'मंत्र' => '🕉️',
+            'त्योहार' => '🗓️', 'ध्यान' => '🧘', 'तीर्थ' => '🛕', 'ज्ञान' => '💡',
+            'भक्ति' => '🙏', 'आरती' => '🪔', 'व्रत' => '🌙', 'सुविचार' => '💬' ];
+$cat_emoji = '📝';
+foreach ( $emojis as $kw => $em ) {
+    if ( mb_strpos( $cat_name, $kw ) !== false ) { $cat_emoji = $em; break; }
+}
+
+$related = [];
+if ( ! empty( $cats ) ) {
+    $rq = new WP_Query( [
+        'post_type' => 'post', 'posts_per_page' => 3,
+        'post__not_in' => [ $post_id ], 'category__in' => [ $cats[0]->term_id ],
+        'ignore_sticky_posts' => true, 'no_found_rows' => true,
+    ] );
+    $related = $rq->posts;
+    wp_reset_postdata();
+}
+
+$share_url   = urlencode( get_permalink() );
+$share_title = urlencode( $title );
+?>
+<article class="pm-single-article">
+  <div class="pm-article-hero" style="<?php echo $thumb ? 'background-image:url(' . esc_url( $thumb ) . ')' : 'background:var(--gd)'; ?>">
+    <div class="pm-article-hero-overlay"></div>
+    <div class="container pm-article-hero-inner">
+      <nav class="pm-breadcrumb">
+        <a href="<?php echo home_url( '/' ); ?>">🏠 होम</a>
+        <span>›</span>
+        <a href="<?php echo esc_url( $cat_url ); ?>"><?php echo esc_html( $cat_name ); ?></a>
+        <span>›</span>
+        <span><?php echo esc_html( mb_substr( $title, 0, 40 ) . ( mb_strlen( $title ) > 40 ? '…' : '' ) ); ?></span>
+      </nav>
+      <span class="pm-article-cat-badge"><?php echo esc_html( $cat_emoji . ' ' . $cat_name ); ?></span>
+      <h1 class="pm-article-title"><?php echo esc_html( $title ); ?></h1>
+      <div class="pm-article-meta">
+        <span>✍️ <?php echo esc_html( $author ); ?></span>
+        <span>📅 <?php echo esc_html( $date ); ?></span>
+        <span>⏱️ <?php echo esc_html( $read_time ); ?> मिनट</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pm-article-layout">
+    <div class="pm-article-content-wrap">
+      <div class="pm-article-content">
+        <?php echo apply_filters( 'the_content', $content ); ?>
+      </div>
+      <div class="pm-share-bar">
+        <span class="pm-share-label">शेयर करें:</span>
+        <a href="https://wa.me/?text=<?php echo $share_title . '%20' . $share_url; ?>" target="_blank" rel="noopener" class="pm-share-btn pm-share-wa">📲 WhatsApp</a>
+        <a href="https://twitter.com/intent/tweet?text=<?php echo $share_title; ?>&url=<?php echo $share_url; ?>" target="_blank" rel="noopener" class="pm-share-btn pm-share-tw">🐦 Twitter</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $share_url; ?>" target="_blank" rel="noopener" class="pm-share-btn pm-share-fb">📘 Facebook</a>
+      </div>
+      <div style="margin-top:28px;text-align:center">
+        <a href="<?php echo esc_url( $cat_url ); ?>" class="btn-outline-green">← <?php echo esc_html( $cat_name ); ?> के और लेख</a>
+      </div>
+    </div>
+
+    <aside class="pm-article-sidebar">
+      <?php if ( ! empty( $related ) ) : ?>
+      <div class="pm-sidebar-widget">
+        <h4 class="pm-sidebar-title">📚 इसी विषय के लेख</h4>
+        <?php foreach ( $related as $rp ) :
+          $rt = get_the_post_thumbnail_url( $rp->ID, 'thumbnail' );
+          $rc = get_the_category( $rp->ID );
+          $rcat = ! empty( $rc ) ? $rc[0]->name : '';
+        ?>
+        <a href="<?php echo get_permalink( $rp->ID ); ?>" class="pm-sidebar-post" style="display:flex;gap:12px;text-decoration:none;align-items:flex-start;padding-bottom:12px;border-bottom:1px solid var(--bdl);margin-bottom:12px">
+          <?php if ( $rt ) : ?>
+          <img src="<?php echo esc_url( $rt ); ?>" alt="" style="width:64px;height:54px;object-fit:cover;border-radius:8px;flex-shrink:0">
+          <?php else : ?>
+          <div style="width:64px;height:54px;background:var(--sg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">🕉️</div>
+          <?php endif; ?>
+          <div>
+            <?php if ( $rcat ) : ?><span style="font-size:11px;font-weight:700;color:var(--go);display:block;margin-bottom:3px"><?php echo esc_html( $rcat ); ?></span><?php endif; ?>
+            <p style="font-size:14px;font-weight:700;color:var(--tx);line-height:1.4;margin-bottom:3px"><?php echo esc_html( $rp->post_title ); ?></p>
+            <span style="font-size:12px;color:var(--txs)">📅 <?php echo get_the_date( 'j M Y', $rp->ID ); ?></span>
+          </div>
+        </a>
+        <?php endforeach; ?>
+      </div>
+      <?php endif; ?>
+
+      <div class="pm-sidebar-widget">
+        <h4 class="pm-sidebar-title">⚡ त्वरित लिंक</h4>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <a href="/prakashmarg/index.php/panchang" style="display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--sg);border-radius:8px;font-size:14px;font-weight:600;color:var(--gm);text-decoration:none">📅 आज का पंचांग</a>
+          <a href="/prakashmarg/index.php/rashifal" style="display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--sg);border-radius:8px;font-size:14px;font-weight:600;color:var(--gm);text-decoration:none">♈ आज का राशिफल</a>
+          <a href="/prakashmarg/index.php/chalisa-library" style="display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--sg);border-radius:8px;font-size:14px;font-weight:600;color:var(--gm);text-decoration:none">📖 चालीसा संग्रह</a>
+          <a href="/prakashmarg/index.php/bhajan" style="display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--sg);border-radius:8px;font-size:14px;font-weight:600;color:var(--gm);text-decoration:none">🎵 भजन-आरती</a>
+        </div>
+      </div>
+
+      
+      <div class="pm-sidebar-widget" style="background: #fff8e1; border: 2px dashed var(--go);">
+        <h4 class="pm-sidebar-title" style="color: var(--gd);">?? ?-????? ?? ??????</h4>
+        <p style="font-size:13px; margin-bottom:10px; color:var(--txm)">?? ????? ?? ????????? ?? ???? ??????? ????? ????? ?? ??????? ?????</p>
+        <a href="/prakashmarg/index.php/shop" class="btn-outline-green" style="display:block; text-align:center; background:var(--gd); color:#fff; border:none; padding:10px;">????? ?????</a>
+        <p style="text-align:center; margin-top:8px; font-size:11px;"><a href="#" style="color:var(--gm);">Amazon ?? ?????? (Affiliate)</a></p>
+      </div>
+
+      <div class="pm-sidebar-widget pm-ad-slot" style="background: #f1f1f1; text-align:center; padding: 20px 10px;">
+        <p style="font-size:11px; color:#888; margin-bottom:8px;">ADVERTISEMENT</p>
+        <div style="width:100%; height:250px; background:#e0e0e0; display:flex; align-items:center; justify-content:center; color:#999; font-weight:bold;">
+          Google AdSense / Banner
+        </div>
+      </div>
+
+      <div class="pm-sidebar-widget" style="background:linear-gradient(135deg,var(--gd),var(--gm));border-color:transparent;position:relative;overflow:hidden">
+        <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gol);margin-bottom:10px">💬 आज का सुविचार</p>
+        <p style="font-size:15px;font-weight:500;color:#fff;line-height:1.6;margin-bottom:8px" id="single-quote-text">कर्म करो, फल की चिंता मत करो।</p>
+        <p style="font-size:13px;color:var(--gol);font-weight:600" id="single-quote-author">— भगवद्गीता</p>
+      </div>
+    </aside>
+  </div>
+</article>
+
+<style>
+.pm-single-article{background:var(--iv)}
+.pm-article-hero{position:relative;min-height:400px;background-size:cover;background-position:center;display:flex;align-items:flex-end;padding-bottom:40px}
+.pm-article-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,30,20,.92) 0%,rgba(15,30,20,.4) 60%,rgba(15,30,20,.1) 100%)}
+.pm-article-hero-inner{position:relative;z-index:1}
+.pm-breadcrumb{display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:14px;flex-wrap:wrap}
+.pm-breadcrumb a{color:rgba(255,255,255,.7);text-decoration:none}.pm-breadcrumb a:hover{color:var(--gol)}
+.pm-article-cat-badge{display:inline-block;background:var(--go);color:#fff;font-size:13px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+.pm-article-title{font-family:'Tiro Devanagari Hindi',serif;font-size:32px;font-weight:700;color:#fff;line-height:1.35;margin-bottom:14px;max-width:720px}
+@media(max-width:600px){.pm-article-title{font-size:22px}}
+.pm-article-meta{display:flex;gap:18px;font-size:14px;color:rgba(255,255,255,.7);flex-wrap:wrap}
+.pm-article-layout{display:grid;grid-template-columns:1fr 290px;gap:40px;padding:48px 20px;align-items:start}
+@media(max-width:900px){.pm-article-layout{grid-template-columns:1fr}}
+.pm-article-content{font-size:17px;line-height:1.9;color:var(--tx)}
+.pm-article-content h2,.pm-article-content h3{font-family:'Tiro Devanagari Hindi',serif;color:var(--gd);margin:32px 0 12px}
+.pm-article-content h2{font-size:26px}.pm-article-content h3{font-size:20px}
+.pm-article-content p{margin-bottom:20px}
+.pm-article-content blockquote{border-left:4px solid var(--go);padding:12px 20px;margin:24px 0;background:var(--sg);border-radius:0 12px 12px 0;font-style:italic;color:var(--gm)}
+.pm-article-content img{width:100%;border-radius:12px;margin:24px 0}
+.pm-article-content a{color:var(--gm);text-decoration:underline}
+.pm-share-bar{display:flex;align-items:center;gap:10px;padding:20px 0;border-top:1px solid var(--bdl);margin-top:36px;flex-wrap:wrap}
+.pm-share-label{font-size:14px;font-weight:600;color:var(--txm)}
+.pm-share-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;border:none;cursor:pointer;font-family:'Mukta',sans-serif}
+.pm-share-wa{background:#25d366;color:#fff}.pm-share-tw{background:#000;color:#fff}.pm-share-fb{background:#1877f2;color:#fff}
+.btn-outline-green{display:inline-block;padding:11px 26px;border:2px solid var(--gd);border-radius:12px;color:var(--gd);font-weight:700;font-size:15px;text-decoration:none;transition:all .2s}
+.btn-outline-green:hover{background:var(--gd);color:#fff}
+.pm-article-sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:80px}
+.pm-sidebar-widget{background:#fff;border:1px solid var(--bdl);border-radius:18px;padding:20px}
+.pm-sidebar-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--gm);margin-bottom:14px}
+</style>
+<script>
+(function(){var q=[{text:'"कर्म करो, फल की चिंता मत करो।"',author:'— भगवद्गीता'},{text:'"सत्यमेव जयते।"',author:'— मुण्डक उपनिषद'},{text:'"अपना दीपक स्वयं बनो।"',author:'— गौतम बुद्ध'},{text:'"विद्या विनयेन शोभते।"',author:'— चाणक्य'},{text:'"सेवा परमो धर्मः।"',author:'— महाभारत'}];var d=new Date(),i=Math.floor((d-new Date(d.getFullYear(),0,0))/86400000)%q.length;var t=document.getElementById('single-quote-text'),a=document.getElementById('single-quote-author');if(t)t.textContent=q[i].text;if(a)a.textContent=q[i].author;})();
+</script>
+<!-- /wp:html -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

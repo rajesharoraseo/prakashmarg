@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/temple-relationships",
+    "title": "Temple Relationships",
+    "category": "pm-entities",
+    "icon": "networking",
+    "description": "Displays related Deities and Festivals for a Temple.",
+    "render": "file:./render.php"
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vrat & Tyohar Calendar - Prakash Marg</title>
+    <meta name="description" content="Hindu Vrat and Tyohar calendar for Ekadashi, Purnima, Amavasya, and major festivals.">
+    <link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/custom.css">
+    <script src="assets/js/theme.js"></script>
+</head>
+<body class="bg-cream dark:bg-navy font-sans text-darkbrown dark:text-cream antialiased selection:bg-saffron selection:text-white flex flex-col min-h-screen">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-cream/90 dark:bg-navy/90 backdrop-blur-md border-b border-sandalwood/20 shadow-soft w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-saffron flex items-center justify-center text-white font-bold text-xl shadow-glow group-hover:scale-105 transition-transform">ॐ</div>
+                    <div>
+                        <span class="font-hindi-serif font-bold text-2xl tracking-tight text-darkbrown dark:text-cream block leading-none">Prakash Marg</span>
+                        <span class="font-hindi text-sm text-saffron font-medium">प्रकाश की ओर एक कदम</span>
+                    </div>
+                </a>
+                <nav class="hidden md:flex space-x-8 items-center h-full">
+                    <a href="index.html" class="text-darkbrown dark:text-cream hover:text-saffron font-medium transition-colors">Home</a>
+                    <div class="relative group h-full flex items-center">
+                        <button class="flex items-center text-saffron font-bold border-b-2 border-saffron transition-colors h-full">
+                            ज्ञान (Knowledge)
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute left-0 top-full w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50 pt-2">
+                            <div class="bg-white dark:bg-navy-light rounded-xl shadow-soft border border-sandalwood/20 overflow-hidden">
+                                <a href="blog.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Blog & Articles</a>
+                                <a href="chalisa-library.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Chalisa Sangrah</a>
+                                <a href="puja-vidhi.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Puja Vidhi</a>
+                                <a href="vrat-tyohar.html" class="block px-4 py-3 text-sm text-saffron bg-saffron-light/10 transition-colors">Vrat & Tyohar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="tools.html" class="text-darkbrown dark:text-cream hover:text-saffron font-medium transition-colors">Spiritual Tools</a>
+                    <a href="shop.html" class="text-darkbrown dark:text-cream hover:text-saffron font-medium transition-colors">eBooks</a>
+                    <a href="my-library.html" class="text-darkbrown dark:text-cream hover:text-saffron font-medium transition-colors">My Library</a>
+                </nav>
+                <div class="flex items-center gap-2">
+                    <button id="theme-toggle" aria-label="Toggle Dark Mode" class="p-2 rounded-full bg-sandalwood/10 dark:bg-navy-light text-darkbrown dark:text-gold hover:bg-sandalwood/30 transition-colors">
+                        <span id="theme-toggle-light-icon" class="hidden">🌞</span>
+                        <span id="theme-toggle-dark-icon">🌙</span>
+                    </button>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-darkbrown dark:text-cream hover:text-saffron p-2">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-navy-light border-t border-sandalwood/20 absolute w-full shadow-soft">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Home</a>
+                <a href="blog.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Blog & Articles</a>
+                <a href="chalisa-library.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Chalisa Sangrah</a>
+                <a href="vrat-tyohar.html" class="block px-3 py-3 rounded-md text-base font-bold text-saffron bg-saffron-light/10">Vrat & Tyohar</a>
+                <a href="tools.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Spiritual Tools</a>
+                <a href="my-library.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">My Library</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative bg-saffron dark:bg-saffron-dark text-white py-16 overflow-hidden">
+            <div class="absolute inset-0 opacity-20">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="calendar-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                            <path d="M10 10 L50 10 M10 30 L50 30 M10 50 L50 50" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </pattern>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#calendar-pattern)"/>
+                </svg>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-hindi-serif font-bold mb-4">व्रत एवं त्यौहार कैलेंडर</h1>
+                <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-hindi">
+                    आगामी एकादशी, पूर्णिमा, अमावस्या और प्रमुख हिन्दू त्यौहारों की तिथियाँ जानें।
+                </p>
+            </div>
+        </section>
+
+        <!-- Calendar UI Section -->
+        <section class="py-12 md:py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-navy-light rounded-3xl shadow-soft border border-sandalwood/30 p-6 md:p-10">
+                
+                <!-- Calendar Header Controls -->
+                <div class="flex justify-between items-center mb-8">
+                    <button id="prev-month" class="p-2 rounded-full hover:bg-sandalwood/20 text-darkbrown dark:text-cream transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <h2 id="calendar-month-title" class="text-2xl md:text-3xl font-bold font-hindi-serif text-darkbrown dark:text-cream text-center">
+                        जून 2026
+                    </h2>
+                    <button id="next-month" class="p-2 rounded-full hover:bg-sandalwood/20 text-darkbrown dark:text-cream transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Calendar Grid -->
+                <div class="grid grid-cols-7 gap-2 md:gap-4 text-center font-bold text-darkbrown-light dark:text-cream-light mb-4 text-sm md:text-base">
+                    <div>रवि</div>
+                    <div>सोम</div>
+                    <div>मंगल</div>
+                    <div>बुध</div>
+                    <div>गुरु</div>
+                    <div>शुक्र</div>
+                    <div>शनि</div>
+                </div>
+                
+                <div id="calendar-days-grid" class="grid grid-cols-7 gap-2 md:gap-4 font-hindi">
+                    <!-- Days will be dynamically injected here via JS -->
+                </div>
+
+                <!-- Legend -->
+                <div class="mt-10 pt-6 border-t border-sandalwood/20 flex flex-wrap gap-6 justify-center text-sm">
+                    <div class="flex items-center gap-2">
+                        <div class="w-4 h-4 rounded-full bg-saffron text-white text-[10px] flex items-center justify-center">ए</div>
+                        <span class="text-darkbrown dark:text-cream font-medium">एकादशी</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-4 h-4 rounded-full bg-darkbrown dark:bg-cream text-white dark:text-darkbrown text-[10px] flex items-center justify-center">अ</div>
+                        <span class="text-darkbrown dark:text-cream font-medium">अमावस्या</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-4 h-4 rounded-full bg-sandalwood text-darkbrown text-[10px] flex items-center justify-center">पू</div>
+                        <span class="text-darkbrown dark:text-cream font-medium">पूर्णिमा</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-4 h-4 rounded-full border-2 border-saffron"></div>
+                        <span class="text-darkbrown dark:text-cream font-medium">त्यौहार</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkbrown dark:bg-navy-dark text-cream pt-16 pb-8 border-t-4 border-saffron mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-cream-dark/50 text-xs">&copy; 2026 Prakash Marg. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="text-cream-dark/50 hover:text-cream text-xs transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-cream-dark/50 hover:text-cream text-xs transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

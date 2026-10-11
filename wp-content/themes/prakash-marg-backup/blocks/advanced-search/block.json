@@ -1,0 +1,16 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pm/advanced-search",
+    "title": "PM Advanced Search",
+    "category": "theme",
+    "icon": "search",
+    "description": "Advanced AJAX search block with live filtering.",
+    "supports": {
+        "html": false,
+        "align": ["wide", "full"]
+    },
+    "textdomain": "prakash-marg",
+    "render": "file:./render.php",
+    "viewScript": "file:./search.js"
+}

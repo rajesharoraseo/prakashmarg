@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "pm/jaap-counter",
+  "title": "Jaap Counter",
+  "category": "prakash-marg",
+  "icon": "update",
+  "description": "A digital clicker for counting mantras.",
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "render": "file:./render.php"
+}

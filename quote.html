@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>आज का सुविचार | Prakash Marg</title>
+    <meta name="description" content="प्रतिदिन नया आध्यात्मिक सुविचार — वेद, उपनिषद, गीता और संतों के अनमोल वचन।">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <script src="assets/js/theme.js"></script>
+    <style>
+        .quote-card {
+            background: linear-gradient(135deg, #3d2b1f 0%, #5c4033 50%, #3d2b1f 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .quote-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 200px;
+            color: rgba(255,153,51,0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .quote-card-light {
+            border-left: 4px solid #ff9933;
+            background: linear-gradient(135deg, #fffdf9 0%, #fff3e0 100%);
+        }
+        .dark .quote-card-light {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { animation: fadeSlideIn 0.6s ease forwards; }
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        .shimmer-divider {
+            background: linear-gradient(90deg, transparent, #ff9933, #ffb870, #ff9933, transparent);
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+        }
+        .category-pill.active {
+            background: #ff9933;
+            color: white;
+        }
+        .quote-share-btn:hover svg { transform: scale(1.2); }
+        .quote-share-btn svg { transition: transform 0.2s; }
+    </style>
+</head>
+<body class="bg-cream dark:bg-navy font-sans text-darkbrown dark:text-cream antialiased flex flex-col min-h-screen">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-cream/90 dark:bg-navy/90 backdrop-blur-md border-b border-sandalwood/20 shadow-soft w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-saffron flex items-center justify-center text-white font-bold text-xl shadow-glow group-hover:scale-105 transition-transform">ॐ</div>
+                    <div>
+                        <span class="font-hindi-serif font-bold text-2xl tracking-tight text-darkbrown dark:text-cream block leading-none">Prakash Marg</span>
+                        <span class="font-hindi text-sm text-saffron font-medium">प्रकाश की ओर एक कदम</span>
+                    </div>
+                </a>
+                <nav class="hidden md:flex space-x-8 items-center h-full">
+                    <a href="index.html" class="text-darkbrown dark:text-cream hover:text-saffron font-medium transition-colors">Home</a>
+                    <a href="quote.html" class="text-saffron font-medium">सुविचार</a>
+                    <a href="blog.html" class="text-darkbrown dark:text-cream hover:text-saffron font-medium transition-colors">Blog</a>
+                    <a href="chalisa-library.html" class="text-darkbrown dark:text-cream hover:text-saffron font-medium transition-colors">Chalisa</a>
+                    <a href="tools.html" class="text-darkbrown dark:text-cream hover:text-saffron font-medium transition-colors">Tools</a>
+                </nav>
+                <div class="flex items-center gap-2">
+                    <button id="theme-toggle" aria-label="Toggle Dark Mode" class="p-2 rounded-full bg-sandalwood/10 dark:bg-navy-light text-darkbrown dark:text-gold hover:bg-sandalwood/30 transition-colors">
+                        <span id="theme-toggle-light-icon" class="hidden">🌞</span>
+                        <span id="theme-toggle-dark-icon">🌙</span>
+                    </button>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-btn" class="text-darkbrown dark:text-cream hover:text-saffron p-2">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+
+        <!-- Hero Quote Section -->
+        <section class="quote-card py-20 px-4">
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <div class="inline-flex items-center gap-2 bg-saffron/20 border border-saffron/40 text-saffron px-4 py-1.5 rounded-full text-sm font-medium mb-8">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    आज का सुविचार — <span id="today-date-hero" class="font-bold"></span>
+                </div>
+
+                <blockquote class="fade-in" id="main-quote-block">
+                    <p class="text-3xl md:text-4xl lg:text-5xl font-hindi-serif font-bold text-white leading-relaxed mb-6" id="main-quote-text">
+                        "कर्म करो, फल की चिंता मत करो।"
+                    </p>
+                    <footer class="text-saffron font-semibold text-xl" id="main-quote-author">— भगवद्गीता</footer>
+                    <p class="text-cream-dark/70 mt-3 font-hindi text-sm" id="main-quote-translation"></p>
+                </blockquote>
+
+                <div class="shimmer-divider h-0.5 max-w-sm mx-auto my-8 rounded-full"></div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap justify-center gap-3 mt-8">
+                    <button onclick="refreshQuote()" class="bg-saffron hover:bg-saffron-dark text-white font-medium px-6 py-3 rounded-xl transition-all shadow-glow hover:shadow-none flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                        नया सुविचार
+                    </button>
+                    <button onclick="copyQuote()" class="quote-share-btn bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-6 py-3 rounded-xl transition-all flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        कॉपी करें
+                    </button>
+                    <button onclick="shareQuote()" class="quote-share-btn bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-6 py-3 rounded-xl transition-all flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+                        शेयर करें
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Filter -->
+        <section class="py-8 bg-white dark:bg-navy-light border-b border-sandalwood/20 sticky top-20 z-40">
+            <div class="max-w-5xl mx-auto px-4 flex flex-wrap gap-3 justify-center" id="category-filters">
+                <button class="category-pill active px-4 py-2 rounded-full text-sm font-medium border border-saffron/30 bg-saffron/10 text-darkbrown dark:text-cream hover:bg-saffron hover:text-white transition-all" data-cat="all">सभी</button>
+                <button class="category-pill px-4 py-2 rounded-full text-sm font-medium border border-sandalwood/30 bg-cream dark:bg-navy text-darkbrown dark:text-cream hover:bg-saffron hover:text-white transition-all" data-cat="gita">भगवद्गीता</button>
+                <button class="category-pill px-4 py-2 rounded-full text-sm font-medium border border-sandalwood/30 bg-cream dark:bg-navy text-darkbrown dark:text-cream hover:bg-saffron hover:text-white transition-all" data-cat="ramcharitmanas">रामचरितमानस</button>
+                <button class="category-pill px-4 py-2 rounded-full text-sm font-medium border border-sandalwood/30 bg-cream dark:bg-navy text-darkbrown dark:text-cream hover:bg-saffron hover:text-white transition-all" data-cat="upanishad">उपनिषद</button>
+                <button class="category-pill px-4 py-2 rounded-full text-sm font-medium border border-sandalwood/30 bg-cream dark:bg-navy text-darkbrown dark:text-cream hover:bg-saffron hover:text-white transition-all" data-cat="saints">संतवाणी</button>
+                <button class="category-pill px-4 py-2 rounded-full text-sm font-medium border border-sandalwood/30 bg-cream dark:bg-navy text-darkbrown dark:text-cream hover:bg-saffron hover:text-white transition-all" data-cat="chanakya">चाणक्य</button>
+                <button class="category-pill px-4 py-2 rounded-full text-sm font-medium border border-sandalwood/30 bg-cream dark:bg-navy text-darkbrown dark:text-cream hover:bg-saffron hover:text-white transition-all" data-cat="kabir">कबीर</button>
+            </div>
+        </section>
+
+        <!-- Quote Grid -->
+        <section class="py-16 bg-cream dark:bg-navy">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-hindi-serif font-bold text-darkbrown dark:text-cream mb-2">अनमोल वचन संग्रह</h2>
+                    <p class="text-darkbrown dark:text-cream-light font-hindi">वेद, पुराण और महापुरुषों के ज्ञान के मोती</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="quotes-grid">
+                    <!-- Quotes rendered by JS -->
+                </div>
+
+                <div class="text-center mt-12">
+                    <button onclick="loadMoreQuotes()" id="load-more-btn" class="inline-flex items-center gap-2 bg-saffron hover:bg-saffron-dark text-white font-medium px-8 py-3 rounded-xl transition-all shadow-glow hover:shadow-none">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                        और सुविचार देखें
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Image Generator (WhatsApp share) -->
+        <section class="py-16 bg-white dark:bg-navy-light border-t border-sandalwood/20">
+            <div class="max-w-2xl mx-auto px-4 text-center">
+                <div class="inline-flex items-center gap-2 text-saffron text-sm font-bold uppercase tracking-wider mb-4">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M13 0C6.373 0 1 5.373 1 12c0 2.098.546 4.064 1.5 5.777L0 24l6.223-1.5A11.96 11.96 0 0013 24c6.627 0 12-5.373 12-12S19.627 0 13 0zm0 22c-1.849 0-3.585-.5-5.077-1.373l-.364-.212-3.774.91.946-3.68-.235-.378A9.96 9.96 0 013 12C3 6.477 7.477 2 13 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                    WhatsApp पर शेयर करें
+                </div>
+                <h3 class="text-2xl font-hindi-serif font-bold text-darkbrown dark:text-cream mb-4">सुविचार को इमेज बनाएं</h3>
+                <p class="text-darkbrown dark:text-cream-light font-hindi mb-6">आज का सुविचार एक सुंदर इमेज के रूप में डाउनलोड करें और अपने प्रियजनों के साथ शेयर करें।</p>
+                <button onclick="downloadQuoteImage()" class="bg-green-600 hover:bg-green-700 text-white font-medium px-8 py-3 rounded-xl transition-all flex items-center gap-2 mx-auto">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    इमेज डाउनलोड करें
+                </button>
+                <canvas id="quote-canvas" class="hidden"></canvas>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkbrown text-cream pt-12 pb-6 border-t-4 border-saffron">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-saffron flex items-center justify-center text-white font-bold">ॐ</div>
+                <span class="font-hindi-serif font-bold text-xl">Prakash Marg</span>
+            </div>
+            <p class="text-cream-dark/50 text-xs">© 2026 Prakash Marg. सर्वाधिकार सुरक्षित।</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/theme.js"></script>
+    <script>
+    // ─── Quotes Database ──────────────────────────────────────────────────────
+    const QUOTES = [
+      { text: "कर्म करो, फल की चिंता मत करो।", author: "भगवद्गीता", translation: "Do your duty, but do not be attached to the results.", cat: "gita", emoji: "🪷" },
+      { text: "अपना दीपक स्वयं बनो।", author: "गौतम बुद्ध", translation: "Be a lamp unto yourself.", cat: "saints", emoji: "🪔" },
+      { text: "जो मन में है, वही जीवन में है।", author: "उपनिषद", translation: "What is in the mind, manifests in life.", cat: "upanishad", emoji: "🕉️" },
+      { text: "मन के जीते जीत है, मन के हारे हार।", author: "कबीर दास", translation: "Victory is in winning the mind; defeat is in losing it.", cat: "kabir", emoji: "🌸" },
+      { text: "मनुष्य अपने भाग्य का निर्माता स्वयं है।", author: "चाणक्य नीति", translation: "Man is the architect of his own destiny.", cat: "chanakya", emoji: "⚡" },
+      { text: "सुख का आधार मन की शांति है।", author: "गीता सार", translation: "The foundation of happiness is peace of mind.", cat: "gita", emoji: "☮️" },
+      { text: "ढाई आखर प्रेम का, पढ़े सो पण्डित होय।", author: "कबीर दास", translation: "One who reads the two-and-a-half letters of Love becomes truly learned.", cat: "kabir", emoji: "❤️" },
+      { text: "विद्या विनयेन शोभते।", author: "चाणक्य", translation: "Knowledge shines through humility.", cat: "chanakya", emoji: "📚" },
+      { text: "राम नाम जपते-जपते जीवन सफल होता है।", author: "रामचरितमानस", translation: "Life becomes fruitful by continuously chanting Ram's name.", cat: "ramcharitmanas", emoji: "🙏" },
+      { text: "सत्यं शिवं सुंदरम्।", author: "वेद", translation: "Truth is Goodness, Goodness is Beauty.", cat: "upanishad", emoji: "✨" },
+      { text: "जहाँ सुमति तहँ संपत्ति नाना।", author: "रामचरितमानस", translation: "Where there is wisdom, there is all prosperity.", cat: "ramcharitmanas", emoji: "🌟" },
+      { text: "आत्मा ही ब्रह्म है।", author: "उपनिषद", translation: "The Self is Brahman — the ultimate reality.", cat: "upanishad", emoji: "🔮" },
+      { text: "मैं तुम्हारे हृदय में हूँ, बाहर क्यों खोजते हो?", author: "कबीर दास", translation: "I dwell within your heart — why do you search outside?", cat: "kabir", emoji: "💫" },
+      { text: "योगः कर्मसु कौशलम्।", author: "भगवद्गीता", translation: "Yoga is excellence in action.", cat: "gita", emoji: "🧘" },
+      { text: "शत्रु बाहर नहीं, मन में होता है।", author: "चाणक्य", translation: "The enemy is not outside; it resides within the mind.", cat: "chanakya", emoji: "⚔️" },
+      { text: "सेवा परमो धर्मः।", author: "महाभारत", translation: "Service is the highest dharma.", cat: "saints", emoji: "🤝" },
+      { text: "क्षमा वीरस्य भूषणम्।", author: "महाभारत", translation: "Forgiveness is the ornament of the brave.", cat: "saints", emoji: "🌺" },
+      { text: "जब जागो तभी सवेरा।", author: "कबीर दास", translation: "Whenever you awaken, it is morning.", cat: "kabir", emoji: "🌅" },
+      { text: "धर्मो रक्षति रक्षितः।", author: "मनुस्मृति", translation: "Dharma protects those who protect it.", cat: "upanishad", emoji: "🛡️" },
+      { text: "प्रेम गली अति साँकरी, तामें दो न समाय।", author: "कबीर दास", translation: "The lane of love is very narrow — it cannot hold two egos.", cat: "kabir", emoji: "🌹" },
+    ];
+
+    let currentQuoteIndex = -1;
+    let filteredQuotes = [...QUOTES];
+    let displayedCount = 6;
+    let activeCategory = 'all';
+
+    // ─── Today's Quote (deterministic by date) ───────────────────────────────
+    function getTodayQuote() {
+      const today = new Date();
+      const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+      return QUOTES[dayOfYear % QUOTES.length];
+    }
+
+    function renderMainQuote(q) {
+      const el = document.getElementById('main-quote-block');
+      el.style.opacity = 0;
+      setTimeout(() => {
+        document.getElementById('main-quote-text').textContent = `"${q.text}"`;
+        document.getElementById('main-quote-author').textContent = `— ${q.author}`;
+        document.getElementById('main-quote-translation').textContent = q.translation || '';
+        el.style.transition = 'opacity 0.5s ease';
+        el.style.opacity = 1;
+      }, 250);
+    }
+
+    function refreshQuote() {
+      currentQuoteIndex = (currentQuoteIndex + 1) % QUOTES.length;
+      renderMainQuote(QUOTES[currentQuoteIndex]);
+    }
+
+    function copyQuote() {
+      const text = document.getElementById('main-quote-text').textContent;
+      const author = document.getElementById('main-quote-author').textContent;
+      navigator.clipboard.writeText(`${text}\n${author}\n\nPrakash Marg — prakashmarg.in`).then(() => {
+        showToast('सुविचार कॉपी हो गया! ✓');
+      });
+    }
+
+    function shareQuote() {
+      const text = document.getElementById('main-quote-text').textContent;
+      const author = document.getElementById('main-quote-author').textContent;
+      const shareData = {
+        title: 'Prakash Marg — आज का सुविचार',
+        text: `${text}\n${author}`,
+        url: 'https://prakashmarg.in/quote.html'
+      };
+      if (navigator.share) {
+        navigator.share(shareData);
+      } else {
+        copyQuote();
+      }
+    }
+
+    // ─── Quote Grid ───────────────────────────────────────────────────────────
+    function renderGrid() {
+      filteredQuotes = activeCategory === 'all'
+        ? [...QUOTES]
+        : QUOTES.filter(q => q.cat === activeCategory);
+
+      const grid = document.getElementById('quotes-grid');
+      grid.innerHTML = '';
+
+      filteredQuotes.slice(0, displayedCount).forEach((q, i) => {
+        const delay = (i % 6) * 80;
+        grid.innerHTML += `
+          <div class="quote-card-light rounded-2xl p-6 shadow-sm hover:shadow-soft transition-all border border-sandalwood/20 group"
+               style="animation: fadeSlideIn 0.5s ease ${delay}ms both;">
+            <div class="text-3xl mb-3">${q.emoji}</div>
+            <blockquote>
+              <p class="font-hindi-serif font-bold text-darkbrown dark:text-cream text-lg leading-relaxed mb-3">"${q.text}"</p>
+              <footer class="text-saffron font-medium text-sm">${q.author}</footer>
+              ${q.translation ? `<p class="text-darkbrown dark:text-cream-light text-xs mt-2 italic">${q.translation}</p>` : ''}
+            </blockquote>
+            <div class="mt-4 pt-3 border-t border-sandalwood/20 flex gap-2">
+              <button onclick="setMainQuote(${QUOTES.indexOf(q)})"
+                class="text-xs text-saffron hover:text-saffron-dark font-medium flex items-center gap-1 transition-colors">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+                Feature करें
+              </button>
+              <button onclick="copySpecific('${q.text.replace(/'/g,"\\'")}','${q.author}')"
+                class="text-xs text-darkbrown dark:text-cream-light hover:text-saffron font-medium flex items-center gap-1 transition-colors ml-auto">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                Copy
+              </button>
+            </div>
+          </div>`;
+      });
+
+      document.getElementById('load-more-btn').style.display =
+        displayedCount >= filteredQuotes.length ? 'none' : 'inline-flex';
+    }
+
+    function loadMoreQuotes() { displayedCount += 6; renderGrid(); }
+
+    function setMainQuote(idx) {
+      currentQuoteIndex = idx;
+      renderMainQuote(QUOTES[idx]);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function copySpecific(text, author) {
+      navigator.clipboard.writeText(`"${text}"\n— ${author}\n\nPrakash Marg — prakashmarg.in`)
+        .then(() => showToast('कॉपी हो गया! ✓'));
+    }
+
+    // ─── Category Filter ──────────────────────────────────────────────────────
+    document.getElementById('category-filters').addEventListener('click', e => {
+      const btn = e.target.closest('.category-pill');
+      if (!btn) return;
+      document.querySelectorAll('.category-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = btn.dataset.cat;
+      displayedCount = 6;
+      renderGrid();
+    });
+
+    // ─── Toast ────────────────────────────────────────────────────────────────
+    function showToast(msg) {
+      const t = document.createElement('div');
+      t.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 bg-saffron text-white px-6 py-3 rounded-xl shadow-lg font-medium z-[9999] text-sm transition-all';
+      t.textContent = msg;
+      document.body.appendChild(t);
+      setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 300); }, 2500);
+    }
+
+    // ─── Download Quote as Image ──────────────────────────────────────────────
+    function downloadQuoteImage() {
+      const canvas = document.getElementById('quote-canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = 1080;
+      canvas.height = 1080;
+
+      // Background gradient
+      const grad = ctx.createLinearGradient(0, 0, 1080, 1080);
+      grad.addColorStop(0, '#3d2b1f');
+      grad.addColorStop(0.5, '#5c4033');
+      grad.addColorStop(1, '#3d2b1f');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 1080, 1080);
+
+      // Decorative circles
+      ctx.globalAlpha = 0.1;
+      ctx.fillStyle = '#ff9933';
+      ctx.beginPath(); ctx.arc(100, 100, 200, 0, Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.arc(980, 980, 250, 0, Math.PI*2); ctx.fill();
+      ctx.globalAlpha = 1;
+
+      // Quote mark
+      ctx.fillStyle = 'rgba(255,153,51,0.2)';
+      ctx.font = 'bold 300px Georgia';
+      ctx.fillText('"', 50, 300);
+
+      // Quote text
+      const quoteText = document.getElementById('main-quote-text').textContent.replace(/"/g, '');
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 52px serif';
+      ctx.textAlign = 'center';
+      wrapText(ctx, quoteText, 540, 480, 900, 70);
+
+      // Author
+      ctx.fillStyle = '#ff9933';
+      ctx.font = '36px sans-serif';
+      const author = document.getElementById('main-quote-author').textContent;
+      ctx.fillText(author, 540, 800);
+
+      // Branding
+      ctx.fillStyle = 'rgba(255,255,255,0.5)';
+      ctx.font = '28px sans-serif';
+      ctx.fillText('prakashmarg.in', 540, 980);
+
+      const link = document.createElement('a');
+      link.download = 'prakashmarg-suvichar.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+      const words = text.split('');
+      let line = '';
+      let testLine = '';
+      let lineCount = 0;
+      // For Hindi/Devanagari, split by space
+      const wordArr = text.split(' ');
+      for (let i = 0; i < wordArr.length; i++) {
+        testLine = line + wordArr[i] + ' ';
+        const metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && i > 0) {
+          ctx.fillText(line, x, y + (lineCount * lineHeight));
+          line = wordArr[i] + ' ';
+          lineCount++;
+        } else {
+          line = testLine;
+        }
+      }
+      ctx.fillText(line, x, y + (lineCount * lineHeight));
+    }
+
+    // ─── Init ─────────────────────────────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set today's date
+      const d = new Date();
+      const months = ['जनवरी','फरवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितम्बर','अक्टूबर','नवम्बर','दिसम्बर'];
+      document.getElementById('today-date-hero').textContent = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+
+      // Show today's quote
+      const todayQ = getTodayQuote();
+      currentQuoteIndex = QUOTES.indexOf(todayQ);
+      renderMainQuote(todayQ);
+
+      // Render grid
+      renderGrid();
+    });
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/deity-hero",
+    "title": "Deity Hero",
+    "category": "pm-entities",
+    "icon": "star-filled",
+    "description": "Displays the Deity Name, Avatar, and Core Mantra.",
+    "render": "file:./render.php"
+}

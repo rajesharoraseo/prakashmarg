@@ -1,0 +1,8 @@
+{
+    "apiVersion": 3,
+    "name": "pm/donation-cta",
+    "title": "Donation CTA",
+    "category": "pm-homepage",
+    "icon": "heart",
+    "render": "file:./render.php"
+}

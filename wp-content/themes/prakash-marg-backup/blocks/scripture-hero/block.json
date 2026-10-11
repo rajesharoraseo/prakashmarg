@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/scripture-hero",
+    "title": "Scripture Hero",
+    "category": "pm-entities",
+    "icon": "book-alt",
+    "description": "Displays the Scripture Name, Author, and original Language.",
+    "render": "file:./render.php"
+}

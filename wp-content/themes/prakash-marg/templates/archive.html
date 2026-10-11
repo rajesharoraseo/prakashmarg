@@ -1,0 +1,66 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<main class="pm-archive-page" style="background:var(--iv);min-height:100vh;padding-bottom:60px">
+	
+	<!-- Hero Section for Archive -->
+	<div style="background:var(--gd);padding:50px 0 40px;position:relative;overflow:hidden">
+		<div style="position:absolute;inset:0;background:url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M20 20.5V18H0v-2h20v-2.5L25 17l-5 3.5zM20 38.5V36H0v-2h20v-2.5L25 35l-5 3.5z\' fill=\'%23ffffff\' fill-opacity=\'0.03\' fill-rule=\'evenodd\'/%3E%3C/svg%3E') repeat;"></div>
+		<div class="container" style="position:relative;z-index:1;text-align:center">
+			<!-- wp:query-title {"type":"archive","textAlign":"center","style":{"typography":{"fontFamily":"'Tiro Devanagari Hindi',serif","fontSize":"42px","fontWeight":"700"},"color":{"text":"#ffffff"}}} /-->
+			<!-- wp:term-description {"textAlign":"center","style":{"color":{"text":"rgba(255,255,255,0.8)"},"spacing":{"margin":{"top":"16px"}}}} /-->
+		</div>
+	</div>
+
+	<!-- Main Archive Grid -->
+	<div class="container" style="margin-top:40px;position:relative;z-index:2">
+		<!-- wp:query {"query":{"perPage":12,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"layout":{"type":"default"}} -->
+		<div class="wp-block-query pm-archive-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:30px">
+			<!-- wp:post-template -->
+				<article class="pm-archive-card" style="background:#fff;border:1px solid var(--bdl);border-radius:16px;overflow:hidden;transition:transform 0.3s ease, box-shadow 0.3s ease;display:flex;flex-direction:column;height:100%">
+					
+					<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"color":{"duotone":"unset"}}} /-->
+					
+					<div class="pm-archive-card-content" style="padding:24px;flex:1;display:flex;flex-direction:column">
+						<div style="font-size:12px;color:var(--go);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">
+							<!-- wp:post-terms {"term":"category"} /-->
+						</div>
+						
+						<!-- wp:post-title {"isLink":true,"style":{"typography":{"fontFamily":"'Tiro Devanagari Hindi',serif","fontSize":"22px","lineHeight":"1.4","fontWeight":"700"},"color":{"text":"var(--gd)"},"spacing":{"margin":{"bottom":"12px","top":"0"}}}} /-->
+						
+						<div style="font-size:15px;color:var(--txm);line-height:1.6;margin-bottom:20px;flex:1">
+							<!-- wp:post-excerpt {"moreText":"","showMoreOnNewLine":false,"excerptLength":20} /-->
+						</div>
+						
+						<div style="display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--bdl);font-size:13px;color:var(--txs)">
+							<!-- wp:post-date {"format":"j F Y"} /-->
+							<span style="display:flex;align-items:center;gap:4px">
+								<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+								3 मिनट
+							</span>
+						</div>
+					</div>
+				</article>
+			<!-- /wp:post-template -->
+			
+			<div style="grid-column:1/-1;margin-top:40px;padding-top:20px;border-top:1px solid var(--bdl)">
+				<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"center"}} -->
+					<!-- wp:query-pagination-previous /-->
+					<!-- wp:query-pagination-numbers /-->
+					<!-- wp:query-pagination-next /-->
+				<!-- /wp:query-pagination -->
+			</div>
+		</div>
+		<!-- /wp:query -->
+	</div>
+</main>
+<style>
+.pm-archive-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); border-color: var(--go); }
+.pm-archive-card .wp-block-post-featured-image { margin: 0; }
+.pm-archive-card .wp-block-post-featured-image img { width: 100%; height: 100%; object-fit: cover; }
+.pm-archive-card .wp-block-post-title a { text-decoration: none; color: inherit; transition: color 0.2s; }
+.pm-archive-card .wp-block-post-title a:hover { color: var(--go); }
+.pm-archive-card .wp-block-post-terms a { text-decoration: none; color: var(--go); }
+.wp-block-query-pagination a { background: #fff; border: 1px solid var(--bdl); padding: 8px 16px; border-radius: 8px; text-decoration: none; color: var(--tx); font-weight: 600; transition: all 0.2s; }
+.wp-block-query-pagination a:hover { background: var(--gd); color: #fff; border-color: var(--gd); }
+.wp-block-query-pagination .current { background: var(--gd); color: #fff; padding: 8px 16px; border-radius: 8px; font-weight: 600; }
+</style>
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

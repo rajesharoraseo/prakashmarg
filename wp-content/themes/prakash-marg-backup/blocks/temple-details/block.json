@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/temple-details",
+    "title": "Temple Details",
+    "category": "pm-entities",
+    "icon": "info",
+    "description": "Displays specific metadata for a Temple (Era, Architecture, Description).",
+    "render": "file:./render.php"
+}

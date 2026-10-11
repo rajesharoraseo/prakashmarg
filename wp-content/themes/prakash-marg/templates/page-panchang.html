@@ -1,0 +1,505 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:html -->
+<main class="pm-panchang-page">
+
+<!-- ── PAGE HERO ─────────────────────────────────── -->
+<div class="pm-panchang-hero">
+  <div class="pm-panchang-hero-bg"></div>
+  <div class="container pm-panchang-hero-inner">
+    <div class="pm-panchang-hero-top">
+      <div>
+        <span class="section-eyebrow">📅 हिन्दू पंचांग</span>
+        <h1 class="pm-panchang-hero-title">आज का पंचांग</h1>
+        <p id="pm-date-display" class="pm-panchang-hero-date">लोड हो रहा है...</p>
+      </div>
+      <div class="pm-panchang-city-select-wrap">
+        <label for="pm-city-select" style="font-size:13px;color:rgba(255,255,255,.7);display:block;margin-bottom:6px">📍 शहर चुनें</label>
+        <select id="pm-city-select" class="pm-city-select" onchange="pmPanchangLoadCity(this.value)">
+          <option value="28.6139,77.2090">🏛️ नई दिल्ली</option>
+          <option value="19.0760,72.8777">🌊 मुम्बई</option>
+          <option value="22.5726,88.3639">🐟 कोलकाता</option>
+          <option value="13.0827,80.2707">🏖️ चेन्नई</option>
+          <option value="12.9716,77.5946">🌿 बेंगलुरू</option>
+          <option value="17.3850,78.4867">💎 हैदराबाद</option>
+          <option value="23.0225,72.5714">🧶 अहमदाबाद</option>
+          <option value="18.5204,73.8567">🏰 पुणे</option>
+          <option value="26.9124,75.7873">🐪 जयपुर</option>
+          <option value="22.7196,75.8577">🕌 इन्दौर</option>
+          <option value="25.3176,82.9739">🛕 वाराणसी</option>
+          <option value="27.1767,78.0081">🕌 आगरा</option>
+          <option value="26.4499,80.3319">🏺 कानपुर</option>
+          <option value="21.1458,79.0882">🌳 नागपुर</option>
+          <option value="30.7333,76.7794">🌾 चंडीगढ़</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Live Vikram Samvat display -->
+    <div class="pm-samvat-bar">
+      <span id="pm-samvat-text">विक्रम संवत 2083</span>
+      <span class="pm-samvat-sep">•</span>
+      <span id="pm-masa-text">मास लोड हो रहा है...</span>
+      <span class="pm-samvat-sep">•</span>
+      <span id="pm-paksha-text">पक्ष लोड हो रहा है...</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── MAIN PANCHANG GRID ─────────────────────────── -->
+<div class="container pm-panchang-main">
+
+  <!-- Left: Panchangam details -->
+  <div class="pm-panchang-details">
+
+    <!-- 5 Elements Card -->
+    <div class="pm-card pm-panchang-five">
+      <h2 class="pm-card-title">🕉️ पंचांग के पाँच अंग</h2>
+      <div class="pm-panchang-five-grid">
+        <div class="pm-panch-item" id="pm-tithi-card">
+          <span class="pm-panch-icon">🌙</span>
+          <span class="pm-panch-label">तिथि</span>
+          <strong class="pm-panch-value" id="pm-tithi">—</strong>
+          <span class="pm-panch-sub" id="pm-paksha-inline">—</span>
+        </div>
+        <div class="pm-panch-item" id="pm-nakshatra-card">
+          <span class="pm-panch-icon">⭐</span>
+          <span class="pm-panch-label">नक्षत्र</span>
+          <strong class="pm-panch-value" id="pm-nakshatra">—</strong>
+        </div>
+        <div class="pm-panch-item" id="pm-yoga-card">
+          <span class="pm-panch-icon">🔯</span>
+          <span class="pm-panch-label">योग</span>
+          <strong class="pm-panch-value" id="pm-yoga">—</strong>
+          <span class="pm-panch-sub" id="pm-yoga-type">—</span>
+        </div>
+        <div class="pm-panch-item" id="pm-karana-card">
+          <span class="pm-panch-icon">✦</span>
+          <span class="pm-panch-label">करण</span>
+          <strong class="pm-panch-value" id="pm-karana">—</strong>
+        </div>
+        <div class="pm-panch-item" id="pm-vara-card">
+          <span class="pm-panch-icon">📅</span>
+          <span class="pm-panch-label">वार</span>
+          <strong class="pm-panch-value" id="pm-vara">—</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sunrise / Muhurta Table -->
+    <div class="pm-card">
+      <h2 class="pm-card-title">☀️ सूर्योदय, सूर्यास्त एवं मुहूर्त</h2>
+      <div class="pm-time-table">
+        <div class="pm-time-row">
+          <span class="pm-time-icon">🌅</span>
+          <span class="pm-time-label">सूर्योदय</span>
+          <strong class="pm-time-value" id="pm-sunrise">—</strong>
+        </div>
+        <div class="pm-time-row">
+          <span class="pm-time-icon">🌇</span>
+          <span class="pm-time-label">सूर्यास्त</span>
+          <strong class="pm-time-value" id="pm-sunset">—</strong>
+        </div>
+        <div class="pm-time-row pm-time-row--alert">
+          <span class="pm-time-icon">⚠️</span>
+          <span class="pm-time-label">राहुकाल</span>
+          <strong class="pm-time-value" id="pm-rahukaal">—</strong>
+        </div>
+        <div class="pm-time-row pm-time-row--shubh">
+          <span class="pm-time-icon">✨</span>
+          <span class="pm-time-label">अभिजित मुहूर्त</span>
+          <strong class="pm-time-value" id="pm-abhijit">—</strong>
+        </div>
+        <div class="pm-time-row">
+          <span class="pm-time-icon">🌓</span>
+          <span class="pm-time-label">चन्द्रमा (रेखांश)</span>
+          <strong class="pm-time-value" id="pm-moon-lon">—°</strong>
+        </div>
+        <div class="pm-time-row">
+          <span class="pm-time-icon">☀️</span>
+          <span class="pm-time-label">सूर्य (रेखांश)</span>
+          <strong class="pm-time-value" id="pm-sun-lon">—°</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- What's auspicious today -->
+    <div class="pm-card pm-today-status" id="pm-today-status">
+      <h2 class="pm-card-title">🔮 आज का शुभ-अशुभ विचार</h2>
+      <div id="pm-status-content">
+        <p style="color:var(--txs);font-size:14px">पंचांग लोड हो रहा है...</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Right: Sidebar -->
+  <aside class="pm-panchang-sidebar">
+
+    <!-- Quick Muhurta Check -->
+    <div class="pm-card">
+      <h3 class="pm-card-title">⏰ लाइव समय (IST)</h3>
+      <div style="text-align:center;padding:12px 0">
+        <div id="pm-live-clock" style="font-size:40px;font-weight:700;color:var(--gd);font-family:'Tiro Devanagari Hindi',serif;letter-spacing:2px">—:—:—</div>
+        <p id="pm-clock-date" style="font-size:14px;color:var(--txm);margin-top:6px">—</p>
+      </div>
+    </div>
+
+    <!-- Upcoming Festivals -->
+    <div class="pm-card">
+      <h3 class="pm-card-title">🎉 आगामी त्योहार</h3>
+      <div id="pm-upcoming-festivals" style="display:flex;flex-direction:column;gap:10px">
+        <p style="color:var(--txs);font-size:13px">लोड हो रहा है...</p>
+      </div>
+    </div>
+
+    <!-- Month Calendar Strip -->
+    <div class="pm-card">
+      <h3 class="pm-card-title">📆 इस माह की तिथियाँ</h3>
+      <div id="pm-month-calendar" class="pm-month-cal"></div>
+    </div>
+
+    <!-- Rashifal Quick Links -->
+    <div class="pm-card" style="background:linear-gradient(135deg,var(--gd),#1a4a30);border-color:transparent">
+      <h3 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--gol);margin-bottom:14px">♈ आज का राशिफल</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <a href="/prakashmarg/rashifal#mesh" class="pm-rashi-link">♈ मेष</a>
+        <a href="/prakashmarg/rashifal#vrish" class="pm-rashi-link">♉ वृष</a>
+        <a href="/prakashmarg/rashifal#mithun" class="pm-rashi-link">♊ मिथुन</a>
+        <a href="/prakashmarg/rashifal#kark" class="pm-rashi-link">♋ कर्क</a>
+        <a href="/prakashmarg/rashifal#singh" class="pm-rashi-link">♌ सिंह</a>
+        <a href="/prakashmarg/rashifal#kanya" class="pm-rashi-link">♍ कन्या</a>
+        <a href="/prakashmarg/rashifal#tula" class="pm-rashi-link">♎ तुला</a>
+        <a href="/prakashmarg/rashifal#vrish-2" class="pm-rashi-link">♏ वृश्चिक</a>
+        <a href="/prakashmarg/rashifal#dhanu" class="pm-rashi-link">♐ धनु</a>
+        <a href="/prakashmarg/rashifal#makar" class="pm-rashi-link">♑ मकर</a>
+        <a href="/prakashmarg/rashifal#kumbh" class="pm-rashi-link">♒ कुम्भ</a>
+        <a href="/prakashmarg/rashifal#meen" class="pm-rashi-link">♓ मीन</a>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ── PANCHANG INFO SECTION ─────────────────────── -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">📚 ज्ञान कोष</span>
+      <h2 class="section-title">पंचांग क्या है?</h2>
+      <div class="section-sep"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:28px">
+      <div class="pm-info-card">
+        <span class="pm-info-card-icon">🌙</span>
+        <h3>तिथि</h3>
+        <p>चन्द्रमा की गति से निर्धारित होती है। एक तिथि = 12° का अन्तर सूर्य और चन्द्र के बीच। प्रत्येक मास में 30 तिथियाँ होती हैं।</p>
+      </div>
+      <div class="pm-info-card">
+        <span class="pm-info-card-icon">⭐</span>
+        <h3>नक्षत्र</h3>
+        <p>आकाश को 27 भागों में बाँटा गया है। चन्द्रमा जिस भाग में हो, वही नक्षत्र। हर नक्षत्र की विशेष शक्ति और फल होता है।</p>
+      </div>
+      <div class="pm-info-card">
+        <span class="pm-info-card-icon">🔯</span>
+        <h3>योग</h3>
+        <p>सूर्य और चन्द्र के अंश का योग करके 27 योगों में से एक निर्धारित होता है। शुभ योग में कार्य करने से सफलता मिलती है।</p>
+      </div>
+      <div class="pm-info-card">
+        <span class="pm-info-card-icon">✦</span>
+        <h3>करण</h3>
+        <p>तिथि के आधे भाग को करण कहते हैं। एक दिन में दो करण होते हैं। यह दैनिक कार्यों के शुभ-अशुभ का बोध कराता है।</p>
+      </div>
+      <div class="pm-info-card">
+        <span class="pm-info-card-icon">📅</span>
+        <h3>वार</h3>
+        <p>सप्ताह के सात दिन — प्रत्येक एक ग्रह का प्रतीक। रविवार = सूर्य, सोमवार = चन्द्र, मंगलवार = मंगल आदि।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<style>
+/* ── Panchang Page ──────────────────────────────── */
+.pm-panchang-page { background: var(--iv); }
+
+.pm-panchang-hero {
+  position: relative;
+  background: var(--gd);
+  padding: 52px 0 40px;
+  overflow: hidden;
+}
+.pm-panchang-hero-bg {
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+}
+.pm-panchang-hero-inner { position: relative; z-index: 1; }
+.pm-panchang-hero-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; }
+.pm-panchang-hero-title { font-family: 'Tiro Devanagari Hindi', serif; font-size: 40px; font-weight: 700; color: #fff; margin: 8px 0 6px; }
+.pm-panchang-hero-date { font-size: 18px; color: rgba(255,255,255,.8); font-weight: 500; }
+
+.pm-samvat-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 15px; color: var(--gol); font-weight: 600; background: rgba(255,255,255,.08); padding: 10px 20px; border-radius: 12px; }
+.pm-samvat-sep { color: rgba(255,255,255,.3); }
+
+.pm-city-select-wrap { flex-shrink: 0; }
+.pm-city-select { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); color: #fff; padding: 10px 16px; border-radius: 10px; font-size: 14px; font-family: 'Mukta', sans-serif; min-width: 200px; cursor: pointer; }
+.pm-city-select option { background: var(--gd); color: #fff; }
+
+.pm-panchang-main { display: grid; grid-template-columns: 1fr 300px; gap: 28px; padding: 36px 20px; align-items: start; }
+@media (max-width: 900px) { .pm-panchang-main { grid-template-columns: 1fr; } }
+
+.pm-card { background: #fff; border: 1px solid var(--bdl); border-radius: 20px; padding: 24px; margin-bottom: 20px; }
+.pm-card-title { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--gm); margin-bottom: 18px; }
+
+.pm-panchang-five-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+@media (max-width: 700px) { .pm-panchang-five-grid { grid-template-columns: repeat(3, 1fr); } }
+.pm-panch-item { display: flex; flex-direction: column; align-items: center; padding: 16px 8px; background: var(--sg); border-radius: 14px; text-align: center; gap: 6px; transition: all .2s; border: 2px solid transparent; }
+.pm-panch-item:hover { border-color: var(--go); background: #fff; }
+.pm-panch-icon { font-size: 26px; }
+.pm-panch-label { font-size: 11px; color: var(--txs); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+.pm-panch-value { font-size: 17px; font-weight: 700; color: var(--gd); font-family: 'Tiro Devanagari Hindi', serif; line-height: 1.3; }
+.pm-panch-sub { font-size: 11px; color: var(--txs); }
+
+.pm-time-table { display: flex; flex-direction: column; gap: 0; }
+.pm-time-row { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--bdl); }
+.pm-time-row:last-child { border-bottom: none; }
+.pm-time-icon { font-size: 18px; width: 28px; flex-shrink: 0; }
+.pm-time-label { flex: 1; font-size: 15px; color: var(--txm); }
+.pm-time-value { font-size: 16px; font-weight: 700; color: var(--gd); }
+.pm-time-row--alert .pm-time-value { color: #c0392b; }
+.pm-time-row--shubh .pm-time-value { color: #27ae60; }
+
+.pm-today-status { background: linear-gradient(135deg, #fffef8 0%, #f0f8ec 100%); }
+.pm-status-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px; background: rgba(255,255,255,.7); border-radius: 10px; margin-bottom: 8px; }
+.pm-status-icon { font-size: 20px; flex-shrink: 0; }
+.pm-status-text { font-size: 14px; color: var(--tx); line-height: 1.5; }
+
+.pm-panchang-sidebar .pm-card { margin-bottom: 20px; }
+.pm-panchang-sidebar .pm-card:last-child { margin-bottom: 0; }
+
+.pm-upcoming-fest { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--bdl); font-size: 14px; }
+.pm-upcoming-fest:last-child { border-bottom: none; }
+.pm-upcoming-fest-name { font-weight: 600; color: var(--tx); }
+.pm-upcoming-fest-date { font-size: 12px; font-weight: 700; color: var(--go); }
+.pm-upcoming-fest-days { font-size: 11px; color: var(--txs); }
+
+.pm-month-cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+.pm-cal-head { font-size: 10px; font-weight: 700; text-align: center; color: var(--txs); padding: 4px 0; text-transform: uppercase; }
+.pm-cal-day { font-size: 12px; text-align: center; padding: 5px 2px; border-radius: 6px; cursor: pointer; transition: all .15s; }
+.pm-cal-day:hover { background: var(--sg); }
+.pm-cal-day--today { background: var(--gd); color: #fff; font-weight: 700; border-radius: 50%; }
+.pm-cal-day--empty { opacity: 0; pointer-events: none; }
+.pm-cal-day--festival { color: var(--go); font-weight: 700; }
+
+.pm-rashi-link { display: flex; align-items: center; gap: 4px; padding: 7px 10px; background: rgba(255,255,255,.1); border-radius: 8px; font-size: 13px; color: rgba(255,255,255,.85); text-decoration: none; transition: all .2s; font-weight: 600; }
+.pm-rashi-link:hover { background: rgba(255,255,255,.2); color: #fff; }
+
+.pm-info-card { background: #fff; border: 1px solid var(--bdl); border-radius: 18px; padding: 24px; }
+.pm-info-card-icon { font-size: 32px; display: block; margin-bottom: 12px; }
+.pm-info-card h3 { font-size: 18px; font-weight: 700; color: var(--gd); margin-bottom: 10px; font-family: 'Tiro Devanagari Hindi', serif; }
+.pm-info-card p { font-size: 14px; line-height: 1.7; color: var(--txm); }
+
+/* Dark Mode Overrides for Panchang Page */
+html.dark .pm-panchang-page { background: var(--bg); }
+html.dark .pm-samvat-bar { background: var(--sg); color: var(--gol); }
+html.dark .pm-card { background: var(--card-bg); border-color: var(--card-border); }
+html.dark .pm-card-title { color: var(--txm); }
+html.dark .pm-panch-item { background: var(--sg); border-color: transparent; }
+html.dark .pm-panch-item:hover { background: var(--sgm); border-color: var(--go); }
+html.dark .pm-time-row { border-color: var(--bdl); }
+html.dark .pm-today-status { background: var(--card-bg); }
+html.dark .pm-status-item { background: var(--sg); }
+html.dark .pm-status-text { color: var(--tx); }
+html.dark .pm-upcoming-fest { border-color: var(--bdl); }
+html.dark .pm-cal-day:hover { background: var(--sg); }
+html.dark .pm-info-card { background: var(--card-bg); border-color: var(--card-border); }
+</style>
+
+<script>
+(function () {
+  'use strict';
+
+  const FESTIVALS = [
+    { name: 'शारदीय नवरात्रि', emoji: '🪔', date: new Date(2026, 9, 2) },
+    { name: 'दशहरा',           emoji: '⚔️', date: new Date(2026, 9, 11) },
+    { name: 'दीपावली',         emoji: '🪔', date: new Date(2026, 9, 31) },
+    { name: 'छठ पूजा',         emoji: '🌅', date: new Date(2026, 10, 4) },
+    { name: 'गुरु नानक जयंती', emoji: '🙏', date: new Date(2026, 10, 15) },
+    { name: 'मकर संक्रांति',   emoji: '🌞', date: new Date(2027, 0, 14) },
+    { name: 'महाशिवरात्रि',    emoji: '🕉️', date: new Date(2027, 1, 26) },
+    { name: 'होली',            emoji: '🎨', date: new Date(2027, 2, 5) },
+    { name: 'रामनवमी',         emoji: '🙏', date: new Date(2027, 3, 6) },
+    { name: 'हनुमान जयंती',    emoji: '🐒', date: new Date(2027, 3, 21) },
+  ];
+
+  const HI_MONTHS = ['जनवरी','फरवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितम्बर','अक्टूबर','नवम्बर','दिसम्बर'];
+  const HI_DAYS   = ['रवि','सोम','मंगल','बुध','गुरु','शुक्र','शनि'];
+
+  let lat = 28.6139, lon = 77.2090;
+
+  /* ─── setEl helper ─────────────────────────────── */
+  function setEl(id, val) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = val;
+  }
+
+  /* ─── Live Clock ────────────────────────────────── */
+  function updateClock() {
+    var now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+    var h = String(now.getHours()).padStart(2, '0');
+    var m = String(now.getMinutes()).padStart(2, '0');
+    var s = String(now.getSeconds()).padStart(2, '0');
+    setEl('pm-live-clock', h + ':' + m + ':' + s);
+    setEl('pm-clock-date', HI_DAYS[now.getDay()] + ', ' + now.getDate() + ' ' + HI_MONTHS[now.getMonth()] + ' ' + now.getFullYear());
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  /* ─── Load Panchang ─────────────────────────────── */
+  function loadPanchang(la, lo) {
+    if (typeof Panchang === 'undefined') {
+      setTimeout(function () { loadPanchang(la, lo); }, 200);
+      return;
+    }
+
+    var now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+    var p = Panchang.compute(now, la, lo);
+    var hd = Panchang.getHindiDate(now);
+
+    // Hero
+    setEl('pm-date-display', hd);
+    setEl('pm-samvat-text', 'विक्रम संवत ' + p.vikramSamvat);
+    setEl('pm-masa-text', 'मास: ' + p.masa);
+    setEl('pm-paksha-text', p.paksha);
+
+    // 5 Angas
+    setEl('pm-tithi', p.tithi);
+    setEl('pm-paksha-inline', p.paksha);
+    setEl('pm-nakshatra', p.nakshatra);
+    setEl('pm-yoga', p.yoga);
+    setEl('pm-yoga-type', p.isShubhYoga ? '✅ शुभ' : '⚠️ विशेष');
+    setEl('pm-karana', p.karana);
+    setEl('pm-vara', p.vara);
+
+    // Timings
+    setEl('pm-sunrise', p.sunrise + ' बजे');
+    setEl('pm-sunset', p.sunset + ' बजे');
+    setEl('pm-rahukaal', p.rahukaal.start + ' – ' + p.rahukaal.end);
+    setEl('pm-abhijit', p.abhijitMuhurta.start + ' – ' + p.abhijitMuhurta.end);
+    setEl('pm-moon-lon', p.moonLon + '°');
+    setEl('pm-sun-lon', p.sunLon + '°');
+
+    // Status card
+    buildStatusCard(p);
+  }
+
+  function buildStatusCard(p) {
+    var items = [];
+    if (p.isShubhYoga) {
+      items.push({ icon: '✅', text: '<strong>' + p.yoga + '</strong> एक शुभ योग है। आज नए कार्य प्रारम्भ करना फलदायी रहेगा।' });
+    } else {
+      items.push({ icon: '⚠️', text: 'आज <strong>' + p.yoga + '</strong> योग है। महत्त्वपूर्ण कार्यों में सावधानी रखें।' });
+    }
+    items.push({ icon: '🌙', text: 'आज <strong>' + p.tithi + '</strong> तिथि है (<strong>' + p.paksha + '</strong>)। ' + getTithiAdvice(p.tithi) });
+    items.push({ icon: '⭐', text: '<strong>' + p.nakshatra + '</strong> नक्षत्र में चन्द्रमा विराजमान है। ' + getNakshatraAdvice(p.nakshatra) });
+    items.push({ icon: '⏰', text: 'राहुकाल <strong>' + p.rahukaal.start + ' से ' + p.rahukaal.end + '</strong> तक है। इस समय शुभ कार्य न करें।' });
+    items.push({ icon: '✨', text: 'अभिजित मुहूर्त <strong>' + p.abhijitMuhurta.start + ' से ' + p.abhijitMuhurta.end + '</strong> — सर्वश्रेष्ठ मुहूर्त।' });
+
+    var html = items.map(function (i) {
+      return '<div class="pm-status-item"><span class="pm-status-icon">' + i.icon + '</span><span class="pm-status-text">' + i.text + '</span></div>';
+    }).join('');
+    var el = document.getElementById('pm-status-content');
+    if (el) el.innerHTML = html;
+  }
+
+  function getTithiAdvice(tithi) {
+    var map = {
+      'एकादशी': 'एकादशी व्रत का दिन — उपवास और विष्णु भजन करें।',
+      'पूर्णिमा': 'पूर्णिमा पर पूजा-अर्चना और दान का विशेष महत्त्व।',
+      'अमावस्या': 'पितृ तर्पण और श्राद्ध के लिए उत्तम दिन।',
+      'चतुर्थी': 'गणेश चतुर्थी — गणपति पूजा करें।',
+      'अष्टमी': 'दुर्गाष्टमी — माँ दुर्गा की आराधना का दिन।',
+      'त्रयोदशी': 'प्रदोष व्रत — शिव पूजा का विशेष दिन।',
+    };
+    return map[tithi] || 'इस तिथि पर नियमित पूजा-पाठ करें।';
+  }
+
+  function getNakshatraAdvice(nakshatra) {
+    var shubh = ['रोहिणी','मृगशिरा','पुनर्वसु','पुष्य','हस्त','चित्रा','स्वाति','अनुराधा','श्रवण','धनिष्ठा','रेवती'];
+    return shubh.includes(nakshatra)
+      ? 'यह शुभ नक्षत्र है, नए कार्यों के लिए उपयुक्त।'
+      : 'विशेष कार्यों में पंडित से परामर्श लें।';
+  }
+
+  /* ─── Upcoming Festivals ────────────────────────── */
+  function loadFestivals() {
+    var now = new Date();
+    var upcoming = FESTIVALS.filter(function (f) { return f.date > now; }).slice(0, 5);
+    var el = document.getElementById('pm-upcoming-festivals');
+    if (!el) return;
+    if (!upcoming.length) { el.innerHTML = '<p style="color:var(--txs);font-size:13px">कोई आगामी त्योहार नहीं।</p>'; return; }
+    el.innerHTML = upcoming.map(function (f) {
+      var diff = Math.ceil((f.date - now) / 86400000);
+      var dateStr = f.date.getDate() + ' ' + HI_MONTHS[f.date.getMonth()];
+      return '<div class="pm-upcoming-fest">' +
+        '<div><div class="pm-upcoming-fest-name">' + f.emoji + ' ' + f.name + '</div>' +
+        '<div class="pm-upcoming-fest-days">' + diff + ' दिन बाद</div></div>' +
+        '<div class="pm-upcoming-fest-date">' + dateStr + '</div>' +
+        '</div>';
+    }).join('');
+  }
+
+  /* ─── Month Calendar ────────────────────────────── */
+  function buildCalendar() {
+    var now = new Date();
+    var year = now.getFullYear(), month = now.getMonth();
+    var today = now.getDate();
+    var firstDay = new Date(year, month, 1).getDay();
+    var daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    // Festival days this month
+    var festDays = new Set();
+    FESTIVALS.forEach(function (f) {
+      if (f.date.getFullYear() === year && f.date.getMonth() === month) {
+        festDays.add(f.date.getDate());
+      }
+    });
+
+    var html = '';
+    ['र', 'स', 'म', 'ब', 'गु', 'शु', 'श'].forEach(function (d) {
+      html += '<div class="pm-cal-head">' + d + '</div>';
+    });
+    for (var i = 0; i < firstDay; i++) html += '<div class="pm-cal-day pm-cal-day--empty"></div>';
+    for (var d = 1; d <= daysInMonth; d++) {
+      var cls = 'pm-cal-day';
+      if (d === today) cls += ' pm-cal-day--today';
+      else if (festDays.has(d)) cls += ' pm-cal-day--festival';
+      html += '<div class="' + cls + '">' + d + '</div>';
+    }
+
+    var el = document.getElementById('pm-month-calendar');
+    if (el) el.innerHTML = html;
+  }
+
+  /* ─── City Selector ─────────────────────────────── */
+  window.pmPanchangLoadCity = function (val) {
+    var parts = val.split(',');
+    lat = parseFloat(parts[0]);
+    lon = parseFloat(parts[1]);
+    loadPanchang(lat, lon);
+  };
+
+  /* ─── Init ──────────────────────────────────────── */
+  document.addEventListener('DOMContentLoaded', function () {
+    loadPanchang(lat, lon);
+    loadFestivals();
+    buildCalendar();
+  });
+
+})();
+</script>
+<!-- /wp:html -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

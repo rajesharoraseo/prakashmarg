@@ -1,0 +1,258 @@
+<!-- wp:template-part {"slug":"header"} /-->
+
+<!-- wp:html -->
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb-2"></div>
+  <div class="hero-mandala"></div>
+  <div class="hero-inner">
+    <div class="fu">
+      <span class="hero-badge">🕉️ सनातन ज्ञान का पोर्टल</span>
+      <h1 class="hero-h1">प्रकाश की ओर<br><span class="gold">एक कदम</span></h1>
+      <p class="hero-sub">मंत्र, चालीसा, पूजा-विधि, पंचांग और सनातन परंपरा — सब कुछ एक जगह, सरल हिंदी में।</p>
+      <form id="hero-search-form" class="hero-search-wrap" style="position: relative;" action="">
+        <input class="hero-search-input" type="search" placeholder="मंत्र, चालीसा, देवता खोजें..." autocomplete="off">
+        <button class="hero-search-btn" type="submit">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          खोजें
+        </button>
+        <div class="hero-search-results hidden" id="heroSearchResults"></div>
+      </form>
+      <div class="hero-pills">
+        <a href="/prakashmarg/index.php/chalisa-library" class="hero-pill">📖 चालीसा</a>
+        <a href="/prakashmarg/index.php/puja-vidhi" class="hero-pill">🪔 पूजा विधि</a>
+        <a href="/prakashmarg/index.php/vrat-tyohar" class="hero-pill">🗓️ व्रत-त्योहार</a>
+        <a href="/prakashmarg/index.php/bhajan" class="hero-pill">🎵 भजन-आरती</a>
+        <a href="/prakashmarg/index.php/quote" class="hero-pill">💬 सुविचार</a>
+      </div>
+    </div>
+    <div class="fu2 hero-right-col">
+      <div class="panchang-card">
+        <div class="panchang-card-head">
+          <div class="panchang-card-title"><span class="live-dot"></span> आज का पंचांग</div>
+          <span class="panchang-date-badge" id="hero-panchang-date">लोड हो रहा है...</span>
+        </div>
+        <div class="panchang-meta">
+          <span class="panchang-meta-tag" id="hero-samvat">विक्रम संवत: ---</span>
+          <span class="panchang-meta-tag" id="hero-masa">मास: ---</span>
+          <span class="panchang-meta-tag" id="hero-paksha">---</span>
+        </div>
+        <div class="panchang-grid">
+          <div class="panchang-cell"><span class="p-label">तिथि</span><span class="p-value" id="hero-tithi">—</span></div>
+          <div class="panchang-cell"><span class="p-label">नक्षत्र</span><span class="p-value" id="hero-nakshatra">—</span></div>
+          <div class="panchang-cell"><span class="p-label">योग</span><span class="p-value" id="hero-yoga">—</span></div>
+          <div class="panchang-cell"><span class="p-label">करण</span><span class="p-value" id="hero-karana">—</span></div>
+        </div>
+        <div class="panchang-bottom">
+          <div class="panchang-pill green"><span class="p-pill-label">🌅 सूर्योदय</span><span class="p-pill-val" id="hero-sunrise">—</span></div>
+          <div class="panchang-pill red"><span class="p-pill-label">⛔ राहुकाल</span><span class="p-pill-val" id="hero-rahu">—</span></div>
+          <div class="panchang-pill gold"><span class="p-pill-label">✨ अभिजित</span><span class="p-pill-val" id="hero-abhijit">—</span></div>
+        </div>
+        <div class="city-row">
+          <select class="city-select" id="city-select">
+            <option value="28.6139,77.2090">📍 नई दिल्ली</option>
+            <option value="19.0760,72.8777">📍 मुंबई</option>
+            <option value="22.5726,88.3639">📍 कोलकाता</option>
+            <option value="13.0827,80.2707">📍 चेन्नई</option>
+            <option value="23.0225,72.5714">📍 अहमदाबाद</option>
+            <option value="26.9124,75.7873">📍 जयपुर</option>
+            <option value="25.3176,82.9739">📍 वाराणसी</option>
+          </select>
+          <button class="city-btn" onclick="updatePanchangCity()">अपडेट</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK LINKS ROW -->
+<div class="quick-row-wrap">
+  <div class="quick-row">
+    <a href="/prakashmarg/index.php/panchang" class="qlink"><div class="qlink-icon" style="background:#e8f4ec">📅</div><span class="qlink-label">पंचांग</span></a>
+    <a href="/prakashmarg/index.php/chalisa-library" class="qlink"><div class="qlink-icon" style="background:#f0e8f4">📖</div><span class="qlink-label">चालीसा</span></a>
+    <a href="/prakashmarg/index.php/bhajan" class="qlink"><div class="qlink-icon" style="background:#fef0e0">🎵</div><span class="qlink-label">भजन-आरती</span></a>
+    <a href="/prakashmarg/index.php/mantra" class="qlink"><div class="qlink-icon" style="background:#e8f0f4">🕉️</div><span class="qlink-label">मंत्र</span></a>
+    <a href="/prakashmarg/index.php/puja-vidhi" class="qlink"><div class="qlink-icon" style="background:#fff0e8">🪔</div><span class="qlink-label">पूजा विधि</span></a>
+    <a href="/prakashmarg/index.php/vrat-tyohar" class="qlink"><div class="qlink-icon" style="background:#f4e8e8">🗓️</div><span class="qlink-label">व्रत-त्योहार</span></a>
+    <a href="/prakashmarg/index.php/tirth-yatra" class="qlink"><div class="qlink-icon" style="background:#e8eef4">🛕</div><span class="qlink-label">तीर्थ यात्रा</span></a>
+    <a href="/prakashmarg/index.php/rashifal" class="qlink"><div class="qlink-icon" style="background:#f4f0e8">♈</div><span class="qlink-label">राशिफल</span></a>
+    <a href="/prakashmarg/index.php/quote" class="qlink"><div class="qlink-icon" style="background:#e8f4f0">💬</div><span class="qlink-label">सुविचार</span></a>
+    <a href="/prakashmarg/index.php/shop" class="qlink"><div class="qlink-icon" style="background:#f4e8f0">📚</div><span class="qlink-label">eBooks</span></a>
+  </div>
+</div>
+
+<!-- QUICK PILLS -->
+<div class="pill-row-wrap">
+  <div class="pill-row">
+    <span class="pill-row-label">आज देखें:</span>
+    <a href="/prakashmarg/index.php/panchang" class="quick-pill"><span class="dot" style="background:#8B2332"></span>आज की तिथि</a>
+    <a href="/prakashmarg/index.php/rashifal" class="quick-pill"><span class="dot" style="background:#b8943a"></span>राशिफल</a>
+    <a href="/prakashmarg/panchang#rahu" class="quick-pill"><span class="dot" style="background:#c0392b"></span>राहुकाल</a>
+    <a href="/prakashmarg/index.php/quote" class="quick-pill"><span class="dot" style="background:#7b68ee"></span>आज का विचार</a>
+    <a href="/prakashmarg/index.php/vrat-tyohar" class="quick-pill"><span class="dot" style="background:#e67e22"></span>व्रत-त्योहार</a>
+    <a href="/prakashmarg/index.php/pm_scripture/hanuman-chalisa" class="quick-pill"><span class="dot" style="background:#e74c3c"></span>हनुमान चालीसा</a>
+  </div>
+</div>
+
+<!-- DASHBOARD TOOLS -->
+<section class="section">
+  <div class="container">
+    <div class="flex-between section-head">
+      <div>
+        <span class="section-eyebrow">⚙️ Spiritual Tools</span>
+        <h2 class="section-title">आध्यात्मिक टूल्स</h2>
+        <div class="section-sep"></div>
+      </div>
+      <a href="/prakashmarg/tools" class="see-all">सभी टूल्स →</a>
+    </div>
+    <div class="grid-3">
+      <div class="tool-card">
+        <div class="tool-card-head">
+          <span class="tool-card-head-icon">🎉</span>
+          <div><div class="tool-card-head-title">उत्सव काउंटडाउन</div><div class="tool-card-head-sub">अगले त्योहार तक</div></div>
+        </div>
+        <div class="tool-card-body">
+          <div style="text-align:center;margin-bottom:10px">
+            <span style="font-size:26px" id="next-festival-emoji">🪔</span>
+            <p style="font-size:15px;font-weight:700;color:var(--gd);margin:4px 0 2px" id="next-festival-name">लोड हो रहा है...</p>
+            <p style="font-size:11px;color:var(--txs)" id="next-festival-date"></p>
+          </div>
+          <div class="cd-grid">
+            <div class="cd-box"><span class="cd-num" id="cd-days">--</span><span class="cd-lbl">दिन</span></div>
+            <div class="cd-box"><span class="cd-num" id="cd-hours">--</span><span class="cd-lbl">घंटे</span></div>
+            <div class="cd-box"><span class="cd-num" id="cd-mins">--</span><span class="cd-lbl">मिनट</span></div>
+          </div>
+          <div id="upcoming-festivals-list" style="margin-top:8px"></div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-head">
+          <span class="tool-card-head-icon">📅</span>
+          <div><div class="tool-card-head-title">आज का पंचांग</div><div class="tool-card-head-sub" id="tp-vara">वार: ---</div></div>
+        </div>
+        <div class="tool-card-body">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--bdl)"><span style="font-size:12px;color:var(--txs)">तिथि</span><span style="font-size:12px;font-weight:700;color:var(--go)" id="tp-tithi">—</span></div>
+            <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--bdl)"><span style="font-size:12px;color:var(--txs)">नक्षत्र</span><span style="font-size:12px;font-weight:700;color:var(--gd)" id="tp-nakshatra">—</span></div>
+            <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--bdl)"><span style="font-size:12px;color:var(--txs)">सूर्योदय</span><span style="font-size:12px;font-weight:700;color:var(--gm)" id="tp-sunrise">—</span></div>
+            <div style="display:flex;justify-content:space-between;padding:7px 0"><span style="font-size:12px;color:var(--txs)">राहुकाल</span><span style="font-size:12px;font-weight:700;color:#c0392b" id="tp-rahu">—</span></div>
+          </div>
+          <a href="/prakashmarg/index.php/panchang" style="display:block;text-align:center;margin-top:14px;padding:9px;background:var(--sg);border:1px solid var(--sgm);border-radius:10px;font-size:12px;font-weight:600;color:var(--gd);text-decoration:none">पूरा पंचांग देखें →</a>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-head">
+          <span class="tool-card-head-icon">🔢</span>
+          <div><div class="tool-card-head-title">भाग्यांक कैलकुलेटर</div><div class="tool-card-head-sub">अंक ज्योतिष</div></div>
+        </div>
+        <div class="tool-card-body">
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:10px">
+            <input type="text" id="lucky-name" class="form-input" placeholder="आपका नाम (वैकल्पिक)">
+            <input type="date" id="lucky-dob" class="form-input">
+            <button class="btn-primary" onclick="calcLuckyNumber()">भाग्यांक जानें 🔢</button>
+          </div>
+          <div id="lucky-result-box" class="hidden" style="text-align:center;padding:12px;background:var(--sg);border-radius:12px">
+            <div class="lucky-num" id="lucky-number-display">7</div>
+            <p style="font-size:11px;font-weight:700;color:var(--gd);margin:4px 0 6px" id="lucky-number-name">आपका भाग्यांक</p>
+            <p style="font-size:11px;color:var(--txs);line-height:1.5" id="lucky-number-desc"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAGAZINE POSTS (dynamic) -->
+<!-- wp:prakash-marg/latest-articles {"count":8} /-->
+
+<!-- BHAJAN + SIDEBAR -->
+<section class="section">
+  <div class="container">
+    <div class="grid-sidebar">
+      <div>
+        <div class="flex-between section-head">
+          <div><span class="section-eyebrow">🎵 भक्ति संगीत</span><h2 class="section-title">भजन-आरती संग्रह</h2><div class="section-sep"></div></div>
+          <a href="/prakashmarg/index.php/bhajan" class="see-all">सभी →</a>
+        </div>
+        <div class="deity-tabs">
+          <button class="deity-tab active" onclick="filterBhajan(this,'all')">🕉️ सभी</button>
+          <button class="deity-tab" onclick="filterBhajan(this,'krishna')">🦚 कृष्ण</button>
+          <button class="deity-tab" onclick="filterBhajan(this,'shiv')">🌙 शिव</button>
+          <button class="deity-tab" onclick="filterBhajan(this,'ram')">🏹 राम</button>
+          <button class="deity-tab" onclick="filterBhajan(this,'mata')">🌸 माता</button>
+          <button class="deity-tab" onclick="filterBhajan(this,'ganesh')">🐘 गणेश</button>
+        </div>
+        <div id="bhajanList" style="display:flex;flex-direction:column;gap:8px">
+          <a href="/prakashmarg/index.php/bhajan" class="bhajan-card" data-deity="krishna"><div class="bhajan-icon" style="background:#e8f4f0">🦚</div><div><p class="bhajan-title">हरे कृष्ण महामंत्र</p><p class="bhajan-sub">कृष्ण भजन • 3 मिनट</p></div><span class="bhajan-arrow">›</span></a>
+          <a href="/prakashmarg/index.php/bhajan" class="bhajan-card" data-deity="shiv"><div class="bhajan-icon" style="background:#e8eef8">🌙</div><div><p class="bhajan-title">ओम नमः शिवाय</p><p class="bhajan-sub">शिव भजन • 5 मिनट</p></div><span class="bhajan-arrow">›</span></a>
+          <a href="/prakashmarg/index.php/bhajan" class="bhajan-card" data-deity="ram"><div class="bhajan-icon" style="background:#f8f0e8">🏹</div><div><p class="bhajan-title">श्री राम जय राम</p><p class="bhajan-sub">राम भजन • 4 मिनट</p></div><span class="bhajan-arrow">›</span></a>
+          <a href="/prakashmarg/index.php/bhajan" class="bhajan-card" data-deity="mata"><div class="bhajan-icon" style="background:#f8e8f0">🌸</div><div><p class="bhajan-title">जय माता दी</p><p class="bhajan-sub">माता आरती • 6 मिनट</p></div><span class="bhajan-arrow">›</span></a>
+          <a href="/prakashmarg/index.php/bhajan" class="bhajan-card" data-deity="krishna"><div class="bhajan-icon" style="background:#e8f4f0">🎵</div><div><p class="bhajan-title">राधे राधे बोल</p><p class="bhajan-sub">कृष्ण भजन • 7 मिनट</p></div><span class="bhajan-arrow">›</span></a>
+          <a href="/prakashmarg/index.php/bhajan" class="bhajan-card" data-deity="ganesh"><div class="bhajan-icon" style="background:#f0f8e8">🐘</div><div><p class="bhajan-title">गणपति बाप्पा मोरया</p><p class="bhajan-sub">गणेश आरती • 5 मिनट</p></div><span class="bhajan-arrow">›</span></a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div class="quote-widget">
+          <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gol);margin-bottom:10px;position:relative;z-index:1">💬 आज का सुविचार</p>
+          <p class="quote-text" id="home-quote-text">कर्म करो, फल की चिंता मत करो।</p>
+          <p class="quote-author" id="home-quote-author">— भगवद्गीता</p>
+          <button class="quote-btn" onclick="refreshHomeQuote()">नया विचार ↻</button>
+          <div style="margin-top:10px;position:relative;z-index:1">
+            <a href="/prakashmarg/index.php/quote" style="font-size:12px;color:rgba(255,255,255,.6);text-decoration:none;border:1px solid rgba(255,255,255,.15);padding:6px 12px;border-radius:7px;display:inline-block">सभी सुविचार देखें →</a>
+          </div>
+        </div>
+        <div class="sidebar-widget">
+          <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--gm);margin-bottom:10px">♈ आज का राशिफल</p>
+          <div class="rashi-scroll">
+            <button class="rashi-btn active" onclick="showRashi(this,'Mesh','🐏','मेष')"><span class="rashi-emoji">🐏</span><span class="rashi-name">मेष</span></button>
+            <button class="rashi-btn" onclick="showRashi(this,'Vrish','🐂','वृष')"><span class="rashi-emoji">🐂</span><span class="rashi-name">वृष</span></button>
+            <button class="rashi-btn" onclick="showRashi(this,'Mithun','👫','मिथुन')"><span class="rashi-emoji">👫</span><span class="rashi-name">मिथुन</span></button>
+            <button class="rashi-btn" onclick="showRashi(this,'Kark','🦀','कर्क')"><span class="rashi-emoji">🦀</span><span class="rashi-name">कर्क</span></button>
+            <button class="rashi-btn" onclick="showRashi(this,'Singh','🦁','सिंह')"><span class="rashi-emoji">🦁</span><span class="rashi-name">सिंह</span></button>
+            <button class="rashi-btn" onclick="showRashi(this,'Kanya','👩','कन्या')"><span class="rashi-emoji">👩</span><span class="rashi-name">कन्या</span></button>
+            <button class="rashi-btn" onclick="showRashi(this,'Tula','⚖️','तुला')"><span class="rashi-emoji">⚖️</span><span class="rashi-name">तुला</span></button>
+            <button class="rashi-btn" onclick="showRashi(this,'Vrischik','🦂','वृश्चिक')"><span class="rashi-emoji">🦂</span><span class="rashi-name">वृश्चिक</span></button>
+            <button class="rashi-btn" onclick="showRashi(this,'Dhan','🏹','धनु')"><span class="rashi-emoji">🏹</span><span class="rashi-name">धनु</span></button>
+            <button class="rashi-btn" onclick="showRashi(this,'Makar','🐐','मकर')"><span class="rashi-emoji">🐐</span><span class="rashi-name">मकर</span></button>
+            <button class="rashi-btn" onclick="showRashi(this,'Kumbh','🏺','कुम्भ')"><span class="rashi-emoji">🏺</span><span class="rashi-name">कुम्भ</span></button>
+            <button class="rashi-btn" onclick="showRashi(this,'Meen','🐟','मीन')"><span class="rashi-emoji">🐟</span><span class="rashi-name">मीन</span></button>
+          </div>
+          <div class="rashi-result-box">
+            <p style="font-size:12px;font-weight:700;color:var(--gd);margin-bottom:4px" id="rashi-title">🐏 मेष राशिफल</p>
+            <p style="font-size:12px;color:var(--txm);line-height:1.55" id="rashi-text">आज का दिन शुभ रहेगा। नए कार्यों की शुरुआत के लिए उत्तम समय है। परिवार में सुख-शांति बनी रहेगी।</p>
+          </div>
+          <a href="/prakashmarg/index.php/rashifal" style="display:block;text-align:center;margin-top:10px;font-size:12px;color:var(--gm);font-weight:600;text-decoration:none">पूरा राशिफल देखें →</a>
+        </div>
+        <div class="sidebar-widget">
+          <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--gm);margin-bottom:12px">🛕 प्रसिद्ध मंदिर</p>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a href="/prakashmarg/index.php/tirth-yatra" class="temple-card"><div style="width:46px;height:46px;background:#f4e8e8;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🛕</div><div><p class="temple-name">काशी विश्वनाथ</p><p class="temple-place">वाराणसी, उत्तर प्रदेश</p></div></a>
+            <a href="/prakashmarg/index.php/tirth-yatra" class="temple-card"><div style="width:46px;height:46px;background:#e8f0f4;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🏔️</div><div><p class="temple-name">केदारनाथ</p><p class="temple-place">उत्तराखंड</p></div></a>
+            <a href="/prakashmarg/index.php/tirth-yatra" class="temple-card"><div style="width:46px;height:46px;background:#e8f4ec;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🦚</div><div><p class="temple-name">वृंदावन</p><p class="temple-place">मथुरा, उत्तर प्रदेश</p></div></a>
+          </div>
+          <a href="/prakashmarg/index.php/tirth-yatra" style="display:block;text-align:center;margin-top:10px;font-size:12px;color:var(--gm);font-weight:600;text-decoration:none">सभी तीर्थ स्थान →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY CARDS -->
+<section class="section alt">
+  <div class="container">
+    <div class="flex-between section-head">
+      <div><span class="section-eyebrow">📁 श्रेणियाँ</span><h2 class="section-title">विषय चुनें</h2><div class="section-sep"></div></div>
+    </div>
+    <div class="grid-5">
+      <a href="/prakashmarg/index.php/bhajan" class="cat-card"><div class="cat-card-bg" style="background-image:url('https://images.unsplash.com/photo-1604537466608-109fa2f16c3b?w=400&q=80')"></div><div class="cat-card-overlay"></div><div class="cat-card-body"><span class="cat-card-icon">🎵</span><p class="cat-card-name">भजन-आरती</p><p class="cat-card-count">120+ भजन</p></div></a>
+      <a href="/prakashmarg/index.php/chalisa-library" class="cat-card"><div class="cat-card-bg" style="background-image:url('https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?w=400&q=80')"></div><div class="cat-card-overlay"></div><div class="cat-card-body"><span class="cat-card-icon">📖</span><p class="cat-card-name">चालीसा संग्रह</p><p class="cat-card-count">40+ चालीसा</p></div></a>
+      <a href="/prakashmarg/index.php/puja-vidhi" class="cat-card"><div class="cat-card-bg" style="background-image:url('https://images.unsplash.com/photo-1563788688-bc04ef2a80af?w=400&q=80')"></div><div class="cat-card-overlay"></div><div class="cat-card-body"><span class="cat-card-icon">🪔</span><p class="cat-card-name">पूजा विधि</p><p class="cat-card-count">60+ विधियाँ</p></div></a>
+      <a href="/prakashmarg/index.php/vrat-tyohar" class="cat-card"><div class="cat-card-bg" style="background-image:url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400&q=80')"></div><div class="cat-card-overlay"></div><div class="cat-card-body"><span class="cat-card-icon">🗓️</span><p class="cat-card-name">व्रत-त्योहार</p><p class="cat-card-count">100+ त्योहार</p></div></a>
+      <a href="/prakashmarg/index.php/tirth-yatra" class="cat-card"><div class="cat-card-bg" style="background-image:url('https://images.unsplash.com/photo-1531761535209-180857e963b9?w=400&q=80')"></div><div class="cat-card-overlay"></div><div class="cat-card-body"><span class="cat-card-icon">🛕</span><p class="cat-card-name">तीर्थ यात्रा</p><p class="cat-card-count">50+ तीर्थ</p></div></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- wp:template-part {"slug":"footer"} /-->
+

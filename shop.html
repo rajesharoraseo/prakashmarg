@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBook Store - Prakash Marg</title>
+    <meta name="description" content="आध्यात्मिक ई-पुस्तकें और ग्रंथ।">
+    <link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/custom.css">
+    <script src="assets/js/theme.js"></script>
+</head>
+<body class="bg-cream dark:bg-navy font-sans text-darkbrown dark:text-cream dark:text-cream antialiased selection:bg-saffron selection:text-white flex flex-col min-h-screen">
+
+    <!-- HEADER (Identical) -->
+    <header class="sticky top-0 z-50 bg-cream/90 dark:bg-navy/90 backdrop-blur-md border-b border-sandalwood/20 shadow-soft w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-saffron flex items-center justify-center text-white font-bold text-xl shadow-glow group-hover:scale-105 transition-transform">ॐ</div>
+                    <div>
+                        <span class="font-hindi-serif font-bold text-2xl tracking-tight text-darkbrown dark:text-cream dark:text-cream block leading-none">Prakash Marg</span>
+                        <span class="font-hindi text-sm text-saffron font-medium">प्रकाश की ओर एक कदम</span>
+                    </div>
+                </a>
+                <nav class="hidden md:flex space-x-8 items-center h-full">
+                    <a href="index.html" class="text-darkbrown dark:text-cream dark:text-cream hover:text-saffron font-medium transition-colors">Home</a>
+                    <div class="relative group h-full flex items-center">
+                        <button class="flex items-center text-darkbrown dark:text-cream dark:text-cream hover:text-saffron font-medium transition-colors h-full">
+                            ज्ञान (Knowledge)
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute left-0 top-full w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50 pt-2">
+                            <div class="bg-white dark:bg-navy-light rounded-xl shadow-soft border border-sandalwood/20 overflow-hidden">
+                                <a href="blog.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Blog & Articles</a>
+                                <a href="chalisa-library.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Chalisa Sangrah</a>
+                                <a href="puja-vidhi.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Puja Vidhi</a>
+                                <a href="#" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Vrat & Tyohar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="tools.html" class="text-darkbrown dark:text-cream dark:text-cream hover:text-saffron font-medium transition-colors">Spiritual Tools</a>
+                    <a href="shop.html" class="text-saffron font-medium transition-colors">eBooks</a>
+                </nav>
+
+                <div class="flex items-center gap-2">
+                    <button id="theme-toggle" aria-label="Toggle Dark Mode" class="p-2 rounded-full bg-sandalwood/10 dark:bg-navy-light text-darkbrown dark:text-gold hover:bg-sandalwood/30 transition-colors">
+                        <span id="theme-toggle-light-icon" class="hidden">🌞</span>
+                        <span id="theme-toggle-dark-icon">🌙</span>
+                    </button>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-darkbrown dark:text-cream dark:text-cream hover:text-saffron p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-navy-light dark:bg-navy-light border-t border-sandalwood/20 absolute w-full shadow-soft">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Home</a>
+                <a href="blog.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Blog & Articles</a>
+                <a href="chalisa-library.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Chalisa Sangrah</a>
+                <a href="puja-vidhi.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Puja Vidhi</a>
+                <a href="tools.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Spiritual Tools</a>
+                <a href="shop.html" class="block px-3 py-3 rounded-md text-base font-medium text-saffron bg-saffron-light/10">eBooks</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow py-12 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-hindi-serif font-bold text-darkbrown dark:text-cream dark:text-cream mb-4">आध्यात्मिक ई-पुस्तकें</h1>
+                <p class="text-lg text-darkbrown dark:text-cream-light font-hindi max-w-2xl mx-auto">गहन अध्ययन के लिए प्रामाणिक सनातन साहित्य और ई-बुक्स।</p>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product Card 1 -->
+                <div class="bg-white dark:bg-navy-light rounded-2xl border border-sandalwood/30 p-5 shadow-sm hover:shadow-soft transition-all group flex flex-col">
+                    <a href="product-single.html" class="block relative rounded-xl overflow-hidden mb-4 bg-cream dark:bg-navy aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Book Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-darkbrown/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="bg-white dark:bg-navy-light text-darkbrown dark:text-cream font-bold px-4 py-2 rounded-full text-sm">Read Preview</span>
+                        </div>
+                        <div class="absolute top-3 left-3 bg-saffron text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Bestseller</div>
+                    </a>
+                    <h2 class="font-hindi-serif font-bold text-lg text-darkbrown dark:text-cream mb-1"><a href="product-single.html" class="hover:text-saffron transition-colors">&#2360;&#2306;&#2346;&#2370;&#2352;&#2381;&#2339; &#2327;&#2368;&#2340;&#2366; &#2332;&#2381;&#2334;&#2366;&#2344; (&#2361;&#2367;&#2306;&#2342;&#2368;)</a></h2>
+                    <p class="text-xs text-darkbrown dark:text-cream-light font-hindi mb-3">Bhagavad Gita PDF Guide</p>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-sandalwood/20">
+                        <span class="font-bold text-lg text-saffron">&#8377;99</span>
+                        <a href="product-single.html" class="bg-darkbrown hover:bg-darkbrown-light text-white text-sm font-medium py-1.5 px-4 rounded transition-colors">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white dark:bg-navy-light rounded-2xl border border-sandalwood/30 p-5 shadow-sm hover:shadow-soft transition-all group flex flex-col">
+                    <a href="product-single.html" class="block relative rounded-xl overflow-hidden mb-4 bg-cream dark:bg-navy aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Meditation Book" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-darkbrown/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="bg-white dark:bg-navy-light text-darkbrown dark:text-cream font-bold px-4 py-2 rounded-full text-sm">Read Preview</span>
+                        </div>
+                    </a>
+                    <h2 class="font-hindi-serif font-bold text-lg text-darkbrown dark:text-cream mb-1"><a href="product-single.html" class="hover:text-saffron transition-colors">&#2343;&#2381;&#2351;&#2366;&#2344; &#2357;&#2367;&#2332;&#2381;&#2334;&#2366;&#2344;: &#2271; &#2360;&#2352;&#2354; &#2350;&#2366;&#2352;&#2381;&#2327;</a></h2>
+                    <p class="text-xs text-darkbrown dark:text-cream-light font-hindi mb-3">Beginner's Meditation Guide PDF</p>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-sandalwood/20">
+                        <span class="font-bold text-lg text-saffron">&#8377;79</span>
+                        <a href="product-single.html" class="bg-darkbrown hover:bg-darkbrown-light text-white text-sm font-medium py-1.5 px-4 rounded transition-colors">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white dark:bg-navy-light rounded-2xl border border-sandalwood/30 p-5 shadow-sm hover:shadow-soft transition-all group flex flex-col">
+                    <a href="product-single.html" class="block relative rounded-xl overflow-hidden mb-4 bg-cream dark:bg-navy aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1578307985758-8d65fa6e7a13?auto=format&fit=crop&w=600&q=80" alt="Vastu Book" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-darkbrown/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="bg-white dark:bg-navy-light text-darkbrown dark:text-cream font-bold px-4 py-2 rounded-full text-sm">Read Preview</span>
+                        </div>
+                        <div class="absolute top-3 left-3 bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">New</div>
+                    </a>
+                    <h2 class="font-hindi-serif font-bold text-lg text-darkbrown dark:text-cream mb-1"><a href="product-single.html" class="hover:text-saffron transition-colors">&#2357;&#2366;&#2360;&#2381;&#2340;&#2369; &#2358;&#2366;&#2360;&#2381;&#2340;&#2381;&#2352; &#2328;&#2352; &#2358;&#2369;&#2342;&#2381;&#2343;&#2367;</a></h2>
+                    <p class="text-xs text-darkbrown dark:text-cream-light font-hindi mb-3">Home Vastu Guide PDF</p>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-sandalwood/20">
+                        <span class="font-bold text-lg text-saffron">&#8377;129</span>
+                        <a href="product-single.html" class="bg-darkbrown hover:bg-darkbrown-light text-white text-sm font-medium py-1.5 px-4 rounded transition-colors">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="bg-white dark:bg-navy-light rounded-2xl border border-sandalwood/30 p-5 shadow-sm hover:shadow-soft transition-all group flex flex-col">
+                    <a href="product-single.html" class="block relative rounded-xl overflow-hidden mb-4 bg-cream dark:bg-navy aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1508921234172-b68ed7e9f0d3?auto=format&fit=crop&w=600&q=80" alt="Puja Guide" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-darkbrown/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="bg-white dark:bg-navy-light text-darkbrown dark:text-cream font-bold px-4 py-2 rounded-full text-sm">Read Preview</span>
+                        </div>
+                    </a>
+                    <h2 class="font-hindi-serif font-bold text-lg text-darkbrown dark:text-cream mb-1"><a href="product-single.html" class="hover:text-saffron transition-colors">&#2342;&#2376;&#2344;&#2367;&#2325; &#2346;&#2370;&#2332;&#2366; &#2361;&#2366;&#2306;&#2337;&#2348;&#2369;&#2325;</a></h2>
+                    <p class="text-xs text-darkbrown dark:text-cream-light font-hindi mb-3">Daily Puja Step-by-Step PDF</p>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-sandalwood/20">
+                        <div>
+                            <span class="font-bold text-lg text-saffron">&#8377;59</span>
+                            <span class="text-xs text-darkbrown/50 dark:text-cream-light line-through ml-2">&#8377;99</span>
+                        </div>
+                        <a href="product-single.html" class="bg-darkbrown hover:bg-darkbrown-light text-white text-sm font-medium py-1.5 px-4 rounded transition-colors">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkbrown text-cream pt-16 pb-8 border-t-4 border-saffron mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 rounded-full bg-saffron flex items-center justify-center text-white font-bold text-lg">ॐ</div>
+                        <span class="font-hindi-serif font-bold text-2xl text-white tracking-tight">Prakash Marg</span>
+                    </a>
+                    <p class="text-cream-dark/70 text-sm leading-relaxed mb-6 font-hindi">सनातन धर्म, भक्ति, और आध्यात्मिक जीवन के प्रामाणिक ज्ञान का अन्वेषण करें।</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold uppercase tracking-wider text-sm mb-6 border-b border-cream/10 pb-2 inline-block">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">About Us</a></li>
+                        <li><a href="blog.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Spiritual Blog</a></li>
+                        <li><a href="tools.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Daily Tools</a></li>
+                        <li><a href="shop.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">eBook Store</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold uppercase tracking-wider text-sm mb-6 border-b border-cream/10 pb-2 inline-block">Library</h4>
+                    <ul class="space-y-3">
+                        <li><a href="chalisa-library.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Chalisa Sangrah</a></li>
+                        <li><a href="#" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Mantra Learning</a></li>
+                        <li><a href="puja-vidhi.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Puja Guides</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold uppercase tracking-wider text-sm mb-6 border-b border-cream/10 pb-2 inline-block">Stay Inspired</h4>
+                    <form class="flex flex-col gap-2">
+                        <input type="email" placeholder="Email address" class="bg-white/10 border border-white/20 rounded px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-saffron">
+                        <button type="submit" class="bg-saffron hover:bg-saffron-dark text-white font-medium rounded px-4 py-2 text-sm transition-colors">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-cream-dark/50 text-xs">&copy; 2026 Prakash Marg. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="text-cream-dark/50 hover:text-cream text-xs transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-cream-dark/50 hover:text-cream text-xs transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

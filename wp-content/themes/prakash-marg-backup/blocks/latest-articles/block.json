@@ -1,0 +1,8 @@
+{
+    "apiVersion": 3,
+    "name": "pm/latest-articles",
+    "title": "Latest Articles",
+    "category": "pm-homepage",
+    "icon": "media-document",
+    "render": "file:./render.php"
+}

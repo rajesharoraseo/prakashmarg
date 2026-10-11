@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/temple-gallery",
+    "title": "Temple Gallery",
+    "category": "pm-entities",
+    "icon": "format-gallery",
+    "description": "Displays the media gallery for the temple.",
+    "render": "file:./render.php"
+}

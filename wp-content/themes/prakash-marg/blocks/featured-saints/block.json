@@ -1,0 +1,14 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pm/featured-saints",
+    "title": "Featured Saints",
+    "category": "prakash-marg",
+    "icon": "groups",
+    "description": "Displays featured saints on the homepage.",
+    "supports": {
+        "html": false,
+        "align": ["wide", "full"]
+    },
+    "render": "file:./render.php"
+}

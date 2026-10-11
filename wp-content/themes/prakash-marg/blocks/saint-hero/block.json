@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/saint-hero",
+    "title": "Saint Hero",
+    "category": "pm-entities",
+    "icon": "businessman",
+    "description": "Displays the Saint Name, Lifespan, and Tradition.",
+    "render": "file:./render.php"
+}

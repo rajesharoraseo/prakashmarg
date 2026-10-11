@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/saint-relationships",
+    "title": "Saint Relationships",
+    "category": "pm-entities",
+    "icon": "networking",
+    "description": "Displays associated Texts and Disciples for a Saint.",
+    "render": "file:./render.php"
+}

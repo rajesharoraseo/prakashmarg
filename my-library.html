@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Spiritual Library - Prakash Marg</title>
+    <meta name="description" content="Access your saved Chalisas, Vrats, and spiritual articles offline.">
+    <link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/custom.css">
+    <script src="assets/js/theme.js"></script>
+</head>
+<body class="bg-cream dark:bg-navy font-sans text-darkbrown dark:text-cream antialiased selection:bg-saffron selection:text-white flex flex-col min-h-screen">
+
+    <!-- HEADER (Identical across pages) -->
+    <header class="sticky top-0 z-50 bg-cream/90 dark:bg-navy/90 backdrop-blur-md border-b border-sandalwood/20 shadow-soft w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-saffron flex items-center justify-center text-white font-bold text-xl shadow-glow group-hover:scale-105 transition-transform">ॐ</div>
+                    <div>
+                        <span class="font-hindi-serif font-bold text-2xl tracking-tight text-darkbrown dark:text-cream block leading-none">Prakash Marg</span>
+                        <span class="font-hindi text-sm text-saffron font-medium">प्रकाश की ओर एक कदम</span>
+                    </div>
+                </a>
+                <nav class="hidden md:flex space-x-8 items-center h-full">
+                    <a href="index.html" class="text-darkbrown dark:text-cream hover:text-saffron font-medium transition-colors">Home</a>
+                    <div class="relative group h-full flex items-center">
+                        <button class="flex items-center text-saffron font-medium transition-colors h-full">
+                            ज्ञान (Knowledge)
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute left-0 top-full w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50 pt-2">
+                            <div class="bg-white dark:bg-navy-light rounded-xl shadow-soft border border-sandalwood/20 overflow-hidden">
+                                <a href="blog.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Blog & Articles</a>
+                                <a href="chalisa-library.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Chalisa Sangrah</a>
+                                <a href="puja-vidhi.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Puja Vidhi</a>
+                                <a href="vrat-tyohar.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Vrat & Tyohar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="tools.html" class="text-darkbrown dark:text-cream hover:text-saffron font-medium transition-colors">Spiritual Tools</a>
+                    <a href="shop.html" class="text-darkbrown dark:text-cream hover:text-saffron font-medium transition-colors">eBooks</a>
+                    <a href="my-library.html" class="text-darkbrown dark:text-cream hover:text-saffron font-bold transition-colors border-b-2 border-saffron">My Library</a>
+                </nav>
+                <div class="flex items-center gap-2">
+                    <button id="theme-toggle" aria-label="Toggle Dark Mode" class="p-2 rounded-full bg-sandalwood/10 dark:bg-navy-light text-darkbrown dark:text-gold hover:bg-sandalwood/30 transition-colors">
+                        <span id="theme-toggle-light-icon" class="hidden">🌞</span>
+                        <span id="theme-toggle-dark-icon">🌙</span>
+                    </button>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-darkbrown dark:text-cream hover:text-saffron p-2">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-navy-light border-t border-sandalwood/20 absolute w-full shadow-soft">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Home</a>
+                <a href="blog.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Blog & Articles</a>
+                <a href="chalisa-library.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Chalisa Sangrah</a>
+                <a href="tools.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Spiritual Tools</a>
+                <a href="shop.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">eBooks</a>
+                <a href="my-library.html" class="block px-3 py-3 rounded-md text-base font-bold text-saffron bg-saffron-light/10">My Library</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative bg-darkbrown dark:bg-navy-dark text-cream py-16 overflow-hidden border-b-4 border-saffron">
+            <div class="absolute inset-0 opacity-10">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="mandala-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="1"/>
+                        </pattern>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#mandala-pattern)"/>
+                </svg>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-hindi-serif font-bold mb-6">मेरा पुस्तकालय <br><span class="text-2xl md:text-3xl font-sans font-light text-sandalwood tracking-wide mt-4 block">(My Saved Library)</span></h1>
+                <p class="text-lg md:text-xl text-cream-dark/80 max-w-2xl mx-auto font-hindi">
+                    यहाँ आपके द्वारा सहेजे गए सभी लेख, चालीसा और आध्यात्मिक पाठ उपलब्ध हैं।
+                </p>
+            </div>
+        </section>
+
+        <!-- Library Content -->
+        <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="empty-library-msg" class="hidden text-center py-20">
+                <div class="text-6xl mb-6">📚</div>
+                <h2 class="text-2xl font-bold font-hindi-serif text-darkbrown dark:text-cream mb-4">आपकी लाइब्रेरी अभी खाली है</h2>
+                <p class="text-darkbrown-light dark:text-cream/70 font-hindi mb-8 max-w-md mx-auto">किसी भी लेख या चालीसा को सहेजने के लिए उस पर दिए गए "⭐ Save" बटन पर क्लिक करें।</p>
+                <a href="blog.html" class="inline-block bg-saffron hover:bg-saffron-dark text-white font-medium rounded-full px-8 py-3 transition-colors">लेख पढ़ना शुरू करें</a>
+            </div>
+            
+            <div id="saved-articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Saved articles will be injected here dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkbrown dark:bg-navy-dark text-cream pt-16 pb-8 border-t-4 border-saffron mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-cream-dark/50 text-xs">&copy; 2026 Prakash Marg. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="text-cream-dark/50 hover:text-cream text-xs transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-cream-dark/50 hover:text-cream text-xs transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

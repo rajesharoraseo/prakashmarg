@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiritual Tools - Prakash Marg</title>
+    <meta name="description" content="Digital utilities designed to support your daily meditation, chanting, and positive living — Panchang, Meditation Timer, Japa Mala Counter, Mantra of the Day, Numerology.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Spiritual Tools — Prakash Marg">
+    <meta property="og:description" content="Free spiritual tools: Meditation Timer, Japa Mala Counter, Daily Panchang, Numerology Calculator.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/custom.css">
+    <script src="assets/js/theme.js"></script>
+</head>
+<body class="bg-cream dark:bg-navy font-sans text-darkbrown dark:text-cream antialiased selection:bg-saffron selection:text-white flex flex-col min-h-screen">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[999] focus:bg-saffron focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold">Skip to main content</a>
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-cream/90 dark:bg-navy/90 backdrop-blur-md border-b border-sandalwood/20 shadow-soft w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-saffron flex items-center justify-center text-white font-bold text-xl shadow-glow group-hover:scale-105 transition-transform">&#2384;</div>
+                    <div>
+                        <span class="font-hindi-serif font-bold text-2xl tracking-tight text-darkbrown dark:text-cream block leading-none">Prakash Marg</span>
+                        <span class="font-hindi text-sm text-saffron font-medium">&#2346;&#2381;&#2352;&#2325;&#2366;&#2358; &#2325;&#2368; &#2323;&#2352; &#2319;&#2325; &#2325;&#2342;&#2350;</span>
+                    </div>
+                </a>
+                <nav class="hidden md:flex space-x-8 items-center h-full">
+                    <a href="index.html" class="text-darkbrown dark:text-cream hover:text-saffron font-medium transition-colors">Home</a>
+                    <div class="relative group h-full flex items-center">
+                        <button class="flex items-center text-darkbrown dark:text-cream hover:text-saffron font-medium transition-colors h-full">
+                            &#2332;&#2381;&#2334;&#2366;&#2344; (Knowledge)
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute left-0 top-full w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50 pt-2">
+                            <div class="bg-white dark:bg-navy-light rounded-xl shadow-soft border border-sandalwood/20 overflow-hidden">
+                                <a href="blog.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Blog &amp; Articles</a>
+                                <a href="chalisa-library.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Chalisa Sangrah</a>
+                                <a href="puja-vidhi.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Puja Vidhi</a>
+                                <a href="vrat-tyohar.html" class="block px-4 py-3 text-sm text-darkbrown dark:text-cream hover:bg-saffron-light/30 hover:text-saffron transition-colors">Vrat &amp; Tyohar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="tools.html" class="text-saffron font-medium transition-colors">Spiritual Tools</a>
+                    <a href="shop.html" class="text-darkbrown dark:text-cream hover:text-saffron font-medium transition-colors">eBooks</a>
+                    <button id="header-search-btn" class="text-darkbrown dark:text-cream hover:text-saffron transition-colors p-2 rounded-full hover:bg-sandalwood/10" aria-label="Search">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                </nav>
+
+                <div class="flex items-center gap-2">
+                    <button id="theme-toggle" aria-label="Toggle Dark Mode" class="p-2 rounded-full bg-sandalwood/10 dark:bg-navy-light text-darkbrown dark:text-gold hover:bg-sandalwood/30 transition-colors">
+                        <span id="theme-toggle-light-icon" class="hidden">&#127774;</span>
+                        <span id="theme-toggle-dark-icon">&#127769;</span>
+                    </button>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-darkbrown dark:text-cream hover:text-saffron p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-navy-light border-t border-sandalwood/20 absolute w-full shadow-soft">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Home</a>
+                <a href="blog.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Blog &amp; Articles</a>
+                <a href="chalisa-library.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Chalisa Sangrah</a>
+                <a href="puja-vidhi.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Puja Vidhi</a>
+                <a href="vrat-tyohar.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">Vrat &amp; Tyohar</a>
+                <a href="tools.html" class="block px-3 py-3 rounded-md text-base font-medium text-saffron bg-saffron-light/10">Spiritual Tools</a>
+                <a href="shop.html" class="block px-3 py-3 rounded-md text-base font-medium text-darkbrown dark:text-cream hover:text-saffron hover:bg-sandalwood/10">eBooks</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow py-12 md:py-20" id="main-content">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h1 class="text-4xl md:text-5xl font-hindi-serif font-bold text-darkbrown dark:text-cream mb-4">&#2342;&#2376;&#2344;&#2367;&#2325; &#2310;&#2343;&#2381;&#2351;&#2366;&#2340;&#2381;&#2350;&#2367;&#2325; &#2335;&#2370;&#2354;&#2381;&#2360;</h1>
+                <p class="text-lg text-darkbrown dark:text-cream-light font-hindi max-w-2xl mx-auto mb-8">
+                    Simple digital utilities designed to support your daily meditation, chanting, and positive living.
+                </p>
+
+                <!-- Global Disclaimer -->
+                <div class="bg-red-50 border border-red-100 rounded-xl p-4 md:p-6 text-center max-w-3xl mx-auto shadow-sm">
+                    <p class="text-sm md:text-base font-hindi text-darkbrown">
+                        <strong class="text-saffron font-bold uppercase tracking-wider block mb-2">Disclaimer</strong>
+                        These tools are for educational and self-improvement purposes only. Prakash Marg does not provide astrology, fortune-telling, occult services, medical advice, or guaranteed outcomes.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tools Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto mt-16">
+
+                <!-- Tool: Daily Panchang Widget -->
+                <div class="panchang-widget bg-cream dark:bg-navy border border-saffron/30 rounded-2xl p-6 text-center shadow-sm hover:shadow-soft transition-all relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-saffron to-saffron-dark"></div>
+                    <div class="flex flex-col items-center mb-4">
+                        <div class="w-12 h-12 bg-white dark:bg-navy-light rounded-full flex items-center justify-center text-2xl mb-3 shadow-inner text-saffron">
+                            &#128197;
+                        </div>
+                        <h3 class="font-hindi-serif font-bold text-xl text-darkbrown dark:text-cream mb-1">&#2310;&#2332; &#2325;&#2366; &#2346;&#2306;&#2330;&#2366;&#2306;&#2327;</h3>
+                        <span class="panchang-date text-xs font-bold text-saffron bg-saffron/10 px-3 py-1 rounded-full border border-saffron/20">--/--/----</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-2 text-left mb-4">
+                        <div class="bg-white dark:bg-navy-light p-2 rounded-md border border-sandalwood/20">
+                            <span class="block text-[10px] font-bold text-darkbrown dark:text-cream-light uppercase tracking-wider">&#2340;&#2367;&#2925;&#2367;</span>
+                            <span class="panchang-tithi font-hindi font-medium text-darkbrown dark:text-cream text-xs line-clamp-1">Loading...</span>
+                        </div>
+                        <div class="bg-white dark:bg-navy-light p-2 rounded-md border border-sandalwood/20">
+                            <span class="block text-[10px] font-bold text-darkbrown dark:text-cream-light uppercase tracking-wider">&#2344;&#2325;&#2381;&#2359;&#2340;&#2381;&#2352;</span>
+                            <span class="panchang-nakshatra font-hindi font-medium text-darkbrown dark:text-cream text-xs line-clamp-1">Loading...</span>
+                        </div>
+                        <div class="bg-white dark:bg-navy-light p-2 rounded-md border border-sandalwood/20">
+                            <span class="block text-[10px] font-bold text-darkbrown dark:text-cream-light uppercase tracking-wider">&#2358;&#2369;&#2349; &#2350;&#2369;&#2361;&#2370;&#2352;&#2381;&#2340;</span>
+                            <span class="panchang-shubh font-hindi font-medium text-green-600 text-xs line-clamp-1">Loading...</span>
+                        </div>
+                        <div class="bg-white dark:bg-navy-light p-2 rounded-md border border-sandalwood/20">
+                            <span class="block text-[10px] font-bold text-darkbrown dark:text-cream-light uppercase tracking-wider">&#2352;&#2366;&#2361;&#2369;&#2325;&#2366;&#2354;</span>
+                            <span class="panchang-rahu font-hindi font-medium text-red-600 text-xs line-clamp-1">Loading...</span>
+                        </div>
+                    </div>
+                    
+                    <p class="panchang-offline-notice text-[10px] text-darkbrown dark:text-cream-light italic font-hindi hidden text-center leading-tight mt-auto">
+                        * &#2309;&#2344;&#2369;&#2350;&#2366;&#2344;&#2367;&#2340; &#2346;&#2306;&#2330;&#2366;&#2306;&#2327; (Estimated — not exact)
+                    </p>
+                </div>
+
+                <!-- Tool: Meditation Timer (FULLY FUNCTIONAL) -->
+                <div id="meditation-timer-container" class="bg-white dark:bg-navy-light rounded-2xl border border-sandalwood/30 p-6 text-center shadow-sm hover:shadow-soft transition-all">
+                    <div class="w-14 h-14 mx-auto bg-cream dark:bg-navy rounded-full flex items-center justify-center text-3xl mb-4 shadow-inner">&#9203;&#65039;</div>
+                    <h3 class="font-hindi-serif font-bold text-2xl text-darkbrown dark:text-cream mb-2">&#2343;&#2381;&#2351;&#2366;&#2344; &#2335;&#2366;&#2311;&#2350;&#2352;</h3>
+                    <p class="text-xs font-hindi text-darkbrown dark:text-cream-light mb-4">&#2360;&#2350;&#2351; &#2330;&#2369;&#2344;&#2375;&#2306; &#2324;&#2352; &#2343;&#2381;&#2351;&#2366;&#2344; &#2358;&#2369;&#2352;&#2370; &#2325;&#2352;&#2375;&#2306;</p>
+                    
+                    <div class="flex flex-wrap justify-center gap-2 mb-4">
+                        <button class="timer-option text-xs font-bold px-3 py-1.5 rounded-full border border-sandalwood/30 hover:border-saffron hover:text-saffron transition-colors text-darkbrown dark:text-cream" data-seconds="300">5 min</button>
+                        <button class="timer-option text-xs font-bold px-3 py-1.5 rounded-full border border-sandalwood/30 hover:border-saffron hover:text-saffron transition-colors text-darkbrown dark:text-cream" data-seconds="600">10 min</button>
+                        <button class="timer-option text-xs font-bold px-3 py-1.5 rounded-full border border-sandalwood/30 hover:border-saffron hover:text-saffron transition-colors text-darkbrown dark:text-cream" data-seconds="900">15 min</button>
+                        <button class="timer-option text-xs font-bold px-3 py-1.5 rounded-full border border-sandalwood/30 hover:border-saffron hover:text-saffron transition-colors text-darkbrown dark:text-cream" data-seconds="1200">20 min</button>
+                    </div>
+                    
+                    <div id="timer-display" class="text-4xl font-bold font-hindi-serif text-saffron mb-4 tabular-nums">00:00</div>
+                    
+                    <div class="flex gap-2 justify-center">
+                        <button id="timer-start-btn" class="bg-saffron hover:bg-saffron-dark text-white font-medium py-2 px-5 rounded-lg transition-colors text-sm flex-1">&#2358;&#2369;&#2352;&#2370; &#2325;&#2352;&#2375;&#2306; (Start)</button>
+                        <button id="timer-reset-btn" class="border border-sandalwood/30 hover:border-saffron text-darkbrown dark:text-cream font-medium py-2 px-4 rounded-lg transition-colors text-sm">&#8635;</button>
+                    </div>
+                </div>
+
+                <!-- Tool: Japa Mala Counter (FULLY FUNCTIONAL) -->
+                <div id="japa-mala-container" class="bg-white dark:bg-navy-light rounded-2xl border border-sandalwood/30 p-6 text-center shadow-sm hover:shadow-soft transition-all">
+                    <div class="w-14 h-14 mx-auto bg-cream dark:bg-navy rounded-full flex items-center justify-center text-3xl mb-4 shadow-inner">&#128255;</div>
+                    <h3 class="font-hindi-serif font-bold text-2xl text-darkbrown dark:text-cream mb-1">&#2337;&#2367;&#2332;&#2367;&#2335;&#2354; &#2332;&#2366;&#2346; &#2350;&#2366;&#2354;&#2366;</h3>
+                    
+                    <div class="w-full bg-sandalwood/20 rounded-full h-2 mb-3">
+                        <div id="mala-progress-bar" class="h-2 bg-gradient-to-r from-saffron to-saffron-dark rounded-full transition-all duration-300" style="width:0%"></div>
+                    </div>
+                    
+                    <div class="flex justify-center gap-8 mb-4">
+                        <div>
+                            <div class="text-xs text-darkbrown dark:text-cream-light uppercase tracking-wider mb-1">&#2348;&#2368;&#2337;</div>
+                            <div id="mala-count" class="text-3xl font-bold font-hindi-serif text-saffron tabular-nums">0</div>
+                            <div class="text-xs text-darkbrown dark:text-cream-light">/108</div>
+                        </div>
+                        <div class="w-px bg-sandalwood/20"></div>
+                        <div>
+                            <div class="text-xs text-darkbrown dark:text-cream-light uppercase tracking-wider mb-1">&#2350;&#2366;&#2354;&#2366;</div>
+                            <div id="mala-rounds" class="text-3xl font-bold font-hindi-serif text-darkbrown dark:text-cream tabular-nums">0</div>
+                            <div class="text-xs text-darkbrown dark:text-cream-light">&#2346;&#2370;&#2352;&#2381;&#2339;</div>
+                        </div>
+                    </div>
+                    
+                    <button id="mala-tap-btn" class="w-20 h-20 mx-auto rounded-full bg-saffron/10 border-4 border-saffron/30 hover:border-saffron hover:bg-saffron/20 flex items-center justify-center text-3xl mb-3 cursor-pointer select-none" style="transition: transform 0.1s; display:flex;">
+                        &#128591;
+                    </button>
+                    <p class="text-xs text-darkbrown dark:text-cream-light font-hindi mb-3">&#2348;&#2335;&#2344; &#2342;&#2348;&#2366;&#2319;&#2306; / Click to count</p>
+                    <button id="mala-reset-btn" class="text-xs text-saffron hover:text-saffron-dark font-medium underline transition-colors">&#2352;&#2368;&#2360;&#2375;&#2335; (Reset)</button>
+                </div>
+
+                <!-- Tool: Mantra of the Day (FULLY FUNCTIONAL) -->
+                <div id="mantra-of-day-container" class="bg-white dark:bg-navy-light rounded-2xl border border-sandalwood/30 p-6 text-center shadow-sm hover:shadow-soft transition-all">
+                    <div class="w-14 h-14 mx-auto bg-cream dark:bg-navy rounded-full flex items-center justify-center text-3xl mb-4 shadow-inner">&#127849;&#65039;</div>
+                    <h3 class="font-hindi-serif font-bold text-2xl text-darkbrown dark:text-cream mb-3">&#2310;&#2332; &#2325;&#2366; &#2350;&#2306;&#2340;&#2381;&#2352;</h3>
+                    
+                    <div class="bg-cream dark:bg-navy rounded-xl p-4 mb-4 border border-saffron/20">
+                        <p id="mantra-text" class="text-2xl font-hindi-serif font-bold text-saffron mb-2">...</p>
+                        <p id="mantra-meaning" class="text-sm font-hindi text-darkbrown dark:text-cream-light italic mb-2">...</p>
+                        <span class="text-xs text-saffron font-bold uppercase tracking-wider bg-saffron/10 px-3 py-1 rounded-full">Deity: <span id="mantra-deity">...</span></span>
+                    </div>
+                    
+                    <p class="text-xs text-darkbrown dark:text-cream-light font-hindi">&#2346;&#2381;&#2352;&#2340;&#2367;&#2342;&#2367;&#2344; &#2344;&#2351;&#2366; &#2350;&#2306;&#2340;&#2381;&#2352; &#2346;&#2381;&#2352;&#2366;&#2346;&#2381;&#2340; &#2325;&#2352;&#2375;&#2306;</p>
+                </div>
+
+                <!-- Tool: Lucky Number / Numerology -->
+                <div class="bg-white dark:bg-navy-light rounded-2xl border border-sandalwood/30 p-8 text-center shadow-sm hover:shadow-soft transition-all" id="lucky-number-card">
+                    <div id="lucky-number-front">
+                        <div class="w-16 h-16 mx-auto bg-cream dark:bg-navy rounded-full flex items-center justify-center text-3xl mb-6 shadow-inner text-saffron">
+                            &#128290;
+                        </div>
+                        <h3 class="font-hindi-serif font-bold text-2xl text-darkbrown dark:text-cream mb-2">&#2309;&#2306;&#2325; &#2332;&#2381;&#2351;&#2379;&#2340;&#2367;&#2359;</h3>
+                        <p class="text-sm font-hindi text-darkbrown dark:text-cream-light mb-6">&#2309;&#2346;&#2344;&#2368; &#2332;&#2344;&#2381;&#2350;&#2340;&#2367;&#2925;&#2367; &#2325;&#2375; &#2310;&#2343;&#2366;&#2352; &#2346;&#2352; &#2309;&#2346;&#2344;&#2366; &#2350;&#2370;&#2354;&#2366;&#2306;&#2325; &#2324;&#2352; &#2349;&#2366;&#2327;&#2381;&#2351;&#2366;&#2306;&#2325; &#2332;&#2366;&#2344;&#2375;&#2306;&#2964;</p>
+                        <button id="btn-open-lucky-number" class="bg-saffron hover:bg-saffron-dark text-white font-medium py-2 px-6 rounded-lg transition-colors w-full">Calculate Numbers</button>
+                    </div>
+
+                    <div id="lucky-number-form" class="hidden flex-col items-center">
+                        <h3 class="font-hindi-serif font-bold text-xl text-darkbrown dark:text-cream mb-4">&#2332;&#2344;&#2381;&#2350; &#2357;&#2367;&#2357;&#2352;&#2339; &#2342;&#2352;&#2381;&#2332; &#2325;&#2352;&#2375;&#2306;</h3>
+                        <div class="w-full text-left mb-4">
+                            <label for="dob-input" class="block text-sm font-medium text-darkbrown dark:text-cream mb-1">Date of Birth (&#2332;&#2344;&#2381;&#2350; &#2340;&#2367;&#2925;&#2367;)</label>
+                            <input type="date" id="dob-input" class="w-full border border-sandalwood/30 rounded-lg p-2 focus:ring-2 focus:ring-saffron focus:border-transparent outline-none bg-cream dark:bg-navy text-darkbrown dark:text-cream">
+                        </div>
+                        <button id="btn-calculate-numerology" class="bg-saffron hover:bg-saffron-dark text-white font-medium py-2 px-6 rounded-lg transition-colors w-full mb-3">Get Details</button>
+                        <button id="btn-cancel-numerology" class="text-darkbrown dark:text-cream-light hover:text-saffron text-sm font-medium transition-colors">Cancel</button>
+                    </div>
+
+                    <div id="lucky-number-result" class="hidden flex-col items-center text-left">
+                        <div class="w-full flex justify-between items-center mb-4 border-b border-sandalwood/20 pb-2">
+                            <h3 class="font-hindi-serif font-bold text-lg text-darkbrown dark:text-cream">&#2310;&#2346;&#2325;&#2375; &#2358;&#2369;&#2349; &#2309;&#2306;&#2325;</h3>
+                            <button id="btn-reset-numerology" class="text-xs text-saffron hover:text-saffron-dark font-medium underline">Reset</button>
+                        </div>
+                        
+                        <div class="w-full space-y-4">
+                            <div class="bg-cream dark:bg-navy rounded-lg p-4 border border-sandalwood/20 relative overflow-hidden">
+                                <div id="moolaank-color-bar" class="absolute left-0 top-0 bottom-0 w-2"></div>
+                                <div class="pl-3">
+                                    <h4 class="text-sm font-bold text-darkbrown dark:text-cream uppercase tracking-wide">&#2350;&#2370;&#2354;&#2366;&#2306;&#2325; (Moolaank)</h4>
+                                    <div class="flex items-end gap-3 mb-1">
+                                        <span id="moolaank-value" class="text-3xl font-hindi-serif font-bold text-saffron">0</span>
+                                        <span id="moolaank-color" class="text-xs font-medium px-2 py-1 bg-white dark:bg-navy-light rounded border border-sandalwood/10">Color</span>
+                                    </div>
+                                    <p id="moolaank-trait" class="text-xs font-hindi text-darkbrown dark:text-cream-light leading-snug"></p>
+                                </div>
+                            </div>
+
+                            <div class="bg-cream dark:bg-navy rounded-lg p-4 border border-sandalwood/20 relative overflow-hidden">
+                                <div id="bhagyaank-color-bar" class="absolute left-0 top-0 bottom-0 w-2"></div>
+                                <div class="pl-3">
+                                    <h4 class="text-sm font-bold text-darkbrown dark:text-cream uppercase tracking-wide">&#2349;&#2366;&#2327;&#2381;&#2351;&#2366;&#2306;&#2325; (Bhagyaank)</h4>
+                                    <div class="flex items-end gap-3 mb-1">
+                                        <span id="bhagyaank-value" class="text-3xl font-hindi-serif font-bold text-saffron">0</span>
+                                        <span id="bhagyaank-color" class="text-xs font-medium px-2 py-1 bg-white dark:bg-navy-light rounded border border-sandalwood/10">Color</span>
+                                    </div>
+                                    <p id="bhagyaank-trait" class="text-xs font-hindi text-darkbrown dark:text-cream-light leading-snug"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkbrown text-cream pt-16 pb-8 border-t-4 border-saffron mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 rounded-full bg-saffron flex items-center justify-center text-white font-bold text-lg">&#2384;</div>
+                        <span class="font-hindi-serif font-bold text-2xl text-white tracking-tight">Prakash Marg</span>
+                    </a>
+                    <p class="text-cream-dark/70 text-sm leading-relaxed mb-6 font-hindi">&#2360;&#2344;&#2366;&#2340;&#2344; &#2343;&#2352;&#2381;&#2350;, &#2349;&#2325;&#2381;&#2340;&#2367;, &#2324;&#2352; &#2310;&#2343;&#2381;&#2351;&#2366;&#2340;&#2381;&#2350;&#2367;&#2325; &#2332;&#2368;&#2357;&#2344; &#2325;&#2375; &#2346;&#2381;&#2352;&#2366;&#2350;&#2366;&#2339;&#2367;&#2325; &#2332;&#2381;&#2334;&#2366;&#2344; &#2325;&#2366; &#2309;&#2344;&#2381;&#2357;&#2375;&#2359;&#2339; &#2325;&#2352;&#2375;&#2306;&#2964;</p>
+                    <div class="flex gap-3">
+                        <a href="#" aria-label="YouTube" class="w-8 h-8 rounded-full bg-white/10 hover:bg-saffron flex items-center justify-center text-cream-dark hover:text-white transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="w-8 h-8 rounded-full bg-white/10 hover:bg-saffron flex items-center justify-center text-cream-dark hover:text-white transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.1 15.6 2.1 15.3 2.1 12s0-3.6.1-4.8C2.4 3.9 4 2.3 7.2 2.3c1.2-.1 1.6-.1 4.8-.1zm0 10.2a4 4 0 110-8 4 4 0 010 8z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Telegram" class="w-8 h-8 rounded-full bg-white/10 hover:bg-saffron flex items-center justify-center text-cream-dark hover:text-white transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.9 8.2l-2 9.4c-.1.6-.5.8-1 .5L12 16l-1.6 1.5c-.2.2-.4.3-.7.3l.3-2.7 5.5-5c.2-.2 0-.3-.3-.1L6.3 14.5 3.9 13.8c-.6-.2-.6-.6.1-.8l11.5-4.4c.5-.2 1 .1.4.6z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold uppercase tracking-wider text-sm mb-6 border-b border-cream/10 pb-2 inline-block">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="blog.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Spiritual Blog</a></li>
+                        <li><a href="tools.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Daily Tools</a></li>
+                        <li><a href="shop.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">eBook Store</a></li>
+                        <li><a href="vrat-tyohar.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Vrat &amp; Festivals</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold uppercase tracking-wider text-sm mb-6 border-b border-cream/10 pb-2 inline-block">Library</h4>
+                    <ul class="space-y-3">
+                        <li><a href="chalisa-library.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Chalisa Sangrah</a></li>
+                        <li><a href="single.html?id=meditation-benefits" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Meditation Guide</a></li>
+                        <li><a href="puja-vidhi.html" class="text-cream-dark/70 hover:text-saffron transition-colors text-sm">Puja Guides</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold uppercase tracking-wider text-sm mb-6 border-b border-cream/10 pb-2 inline-block">Stay Inspired</h4>
+                    <p class="text-cream-dark/70 text-sm mb-4">Subscribe for daily quotes and spiritual articles.</p>
+                    <form class="flex flex-col gap-2">
+                        <input type="email" placeholder="Email address" class="bg-white/10 border border-white/20 rounded px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-saffron">
+                        <button type="submit" class="bg-saffron hover:bg-saffron-dark text-white font-medium rounded px-4 py-2 text-sm transition-colors">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-cream-dark/50 text-xs">&copy; 2026 Prakash Marg. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="text-cream-dark/50 hover:text-cream text-xs transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-cream-dark/50 hover:text-cream text-xs transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!-- wp:group {"tagName":"header","className":"site-header premium-header","align":"full"} -->
+<header class="wp-block-group site-header premium-header alignfull" style="width: 100%; margin: 0; padding: 0; gap: 0 !important; display: flex; flex-direction: column;">
+  
+  <!-- TOP BAR -->
+  <div class="ticker-bar" style="margin: 0 !important;">
+    <span class="ticker-label">🔴 LIVE</span>
+    <div class="ticker-scroll-wrap">
+      <div class="ticker-scroll">
+        <span>📅 आज की तिथि: <strong id="t-tithi" style="color:var(--gol)">लोड हो रहा है...</strong></span>
+        <span class="ticker-sep">✦</span>
+        <span>🎉 अगला त्योहार: <strong id="t-festival" style="color:var(--gol)">लोड हो रहा है...</strong></span>
+        <span class="ticker-sep">✦</span>
+        <span>💬 <strong style="color:rgba(255,255,255,.75)">कर्म करो, फल की चिंता मत करो।</strong></span>
+        <span class="ticker-sep">✦</span>
+        <span>🕉️ Prakash Marg — सनातन ज्ञान का पोर्टल</span>
+        <span class="ticker-sep">✦</span>
+        <span>📅 आज की तिथि: <strong class="t-tithi-dup" style="color:var(--gol)">—</strong></span>
+        <span class="ticker-sep">✦</span>
+        <span>🎉 अगला त्योहार: <strong class="t-festival-dup" style="color:var(--gol)">—</strong></span>
+        <span class="ticker-sep">✦</span>
+        <span>💬 <strong style="color:rgba(255,255,255,.75)">कर्म करो, फल की चिंता मत करो।</strong></span>
+        <span class="ticker-sep">✦</span>
+        <span>🕉️ Prakash Marg — सनातन ज्ञान का पोर्टल</span>
+      </div>
+    </div>
+    
+    <div class="top-bar-right" style="display: flex; align-items: center; gap: 10px; flex-shrink: 0; margin-left: 20px;">
+      <button id="themeToggle" style="background: var(--bg); border: 1px solid var(--bd); border-radius: 12px; width: 44px; height: 22px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--tx); margin-left: 10px;"><span style="font-size: 12px;">🌙</span></button>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <div class="main-nav-wrap" style="background: var(--bg); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; width: 100%; left: 0; right: 0; margin: 0 !important; border-top: none;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 15px; max-width: 1200px; margin: 0 auto;">
+      
+      <!-- LOGO -->
+      <a href="/prakashmarg/" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="/prakashmarg/wp-content/themes/prakash-marg/assets/images/logo.png" alt="Prakash Marg Logo" style="height: 70px; width: auto;">
+      </a>
+
+      <!-- NAV LINKS -->
+      <nav class="desktop-nav">
+        <a href="/prakashmarg/" class="active">होम</a>
+        
+        <div class="nav-dropdown">
+          <button>ज्ञान ▾</button>
+          <div class="dropdown-menu">
+            <a href="/prakashmarg/index.php/blog">📰 Blog &amp; Articles</a>
+            <a href="/prakashmarg/index.php/puja-vidhi">🪔 पूजा विधि</a>
+            <a href="/prakashmarg/index.php/vrat-tyohar">🗓️ व्रत &amp; त्योहार</a>
+          </div>
+        </div>
+
+        <a href="/prakashmarg/index.php/bhajan">भजन-आरती</a>
+        <a href="/prakashmarg/index.php/chalisa-library">चालीसा</a>
+        
+        <div class="nav-dropdown">
+          <button>पंचांग ▾</button>
+          <div class="dropdown-menu">
+            <a href="/prakashmarg/index.php/panchang">📅 आज का पंचांग</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <button>टूल्स ▾</button>
+          <div class="dropdown-menu">
+            <a href="/prakashmarg/index.php/rashifal">♈ राशिफल</a>
+            <a href="/prakashmarg/index.php/lucky-number">🔢 भाग्यांक</a>
+          </div>
+        </div>
+
+        <a href="/prakashmarg/index.php/shop" class="shop-link" style="color:var(--go); font-weight:bold;">🛒 ई-स्टोर</a>
+      </nav>
+
+      <!-- ICONS & SEARCH -->
+      <div class="header-right" style="display: flex; align-items: center; gap: 15px;">
+        <form action="/prakashmarg/" method="get" style="margin:0; position:relative; display:flex; align-items:center;">
+          <input type="search" name="s" placeholder="खोजें..." style="padding: 8px 35px 8px 15px; border-radius: 20px; border: 1px solid var(--bd); outline: none; width: 200px; font-family: 'Mukta', sans-serif; font-size: 13px; background: #fff;">
+          <button type="submit" style="position: absolute; right: 5px; background: #7b191c; color: white; border: none; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </button>
+        </form>
+        <button style="background: var(--bg); border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #7b191c; box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-size: 18px;">👤</button>
+        <button style="background: var(--bg); border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--go); position: relative; box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-size: 18px;">
+          🛒 <span style="position: absolute; top: -5px; right: -5px; background: #eab308; color: white; font-size: 10px; font-weight: bold; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">0</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+  
+  <!-- SEARCH OVERLAY -->
+  <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-box">
+      <button class="search-close" onclick="closeSearch()">✕</button>
+      <p style="font-size:12px;color:var(--txs);margin-bottom:10px">🔍 खोजें</p>
+      <form action="/prakashmarg/" method="get" id="overlaySearchForm" style="margin:0;">
+        <input class="search-box-input" type="search" name="s" placeholder="मंत्र, चालीसा, देवता, त्योहार खोजें..." autofocus id="searchInput">
+      </form>
+      <div id="overlaySearchResults" style="margin-top: 15px;"></div>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <span style="font-size:11px;color:var(--txs)">लोकप्रिय:</span>
+        <a href="/prakashmarg/chalisa/" style="font-size:11px;color:var(--gm);text-decoration:none;padding:3px 10px;background:var(--sg);border-radius:6px">हनुमान चालीसा</a>
+        <a href="/prakashmarg/panchang/" style="font-size:11px;color:var(--gm);text-decoration:none;padding:3px 10px;background:var(--sg);border-radius:6px">आज का पंचांग</a>
+        <a href="/prakashmarg/vrat-tyohar/" style="font-size:11px;color:var(--gm);text-decoration:none;padding:3px 10px;background:var(--sg);border-radius:6px">दीपावली</a>
+      </div>
+    </div>
+  </div>
+
+</header>
+<!-- /wp:group -->

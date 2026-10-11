@@ -1,0 +1,8 @@
+{
+    "apiVersion": 3,
+    "name": "pm/featured-scriptures",
+    "title": "Featured Scriptures",
+    "category": "pm-homepage",
+    "icon": "book",
+    "render": "file:./render.php"
+}

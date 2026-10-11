@@ -1,0 +1,14 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pm/featured-festivals",
+    "title": "Featured Festivals",
+    "category": "prakash-marg",
+    "icon": "calendar-alt",
+    "description": "Displays featured festivals on the homepage.",
+    "supports": {
+        "html": false,
+        "align": ["wide", "full"]
+    },
+    "render": "file:./render.php"
+}

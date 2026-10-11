@@ -1,0 +1,286 @@
+/* ================================================================
+   Prakash Marg — custom.css
+   Fixes ALL broken Tailwind dark: variant classes.
+   The compiled style.css has malformed .dark selectors,
+   so every dark: class is manually implemented here.
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   BASE SETUP
+   ---------------------------------------------------------------- */
+html { scroll-behavior: smooth; }
+
+:root {
+    --cream:      #FFFDF9;
+    --darkbrown:  #3D2B1F;
+    --saffron:    #FF9933;
+    --navy:       #0f172a;
+    --navy-light: #1e293b;
+    --gold:       #fbbf24;
+}
+
+/* ----------------------------------------------------------------
+   SCREEN READER UTILITY
+   ---------------------------------------------------------------- */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border-width: 0 !important;
+}
+
+/* ----------------------------------------------------------------
+   DARK MODE — GLOBAL FOUNDATION
+   When .dark is on <html>, flip the entire page
+   ---------------------------------------------------------------- */
+.dark body {
+    background-color: #0f172a;
+    color: #FFFDF9;
+}
+
+/* ----------------------------------------------------------------
+   DARK MODE — BACKGROUNDS
+   ---------------------------------------------------------------- */
+
+/* bg-navy = dark page background */
+.dark .dark\:bg-navy       { background-color: #0f172a !important; }
+.dark .dark\:bg-navy-dark  { background-color: #020617 !important; }
+.dark .dark\:bg-navy-light { background-color: #1e293b !important; }
+.dark .dark\:bg-navy\/90   { background-color: rgba(15,23,42,0.9) !important; }
+.dark .dark\:bg-cream      { background-color: #FFFDF9 !important; }
+.dark .dark\:bg-saffron-dark { background-color: #E67A00 !important; }
+
+/* Standard Tailwind color overrides for dark mode */
+/* bg-white cards → navy-light */
+.dark .bg-white            { background-color: #1e293b !important; }
+
+/* bg-cream content areas → navy */
+.dark .bg-cream            { background-color: #0f172a !important; }
+.dark .bg-cream\/90        { background-color: rgba(15,23,42,0.9) !important; }
+
+/* Header sticky bg — covers bg-cream/90 backdrop header */
+.dark header,
+.dark header.sticky        { background-color: rgba(15,23,42,0.95) !important; border-color: rgba(255,153,51,0.12) !important; }
+
+/* Sections that alternate between bg-cream and bg-white */
+.dark section.bg-cream,
+.dark section.bg-white,
+.dark section              { background-color: #0f172a; }
+.dark section.bg-white     { background-color: #1e293b !important; }
+
+/* ----------------------------------------------------------------
+   DARK MODE — TEXT
+   ---------------------------------------------------------------- */
+.dark .dark\:text-cream       { color: #FFFDF9 !important; }
+.dark .dark\:text-cream-light { color: rgba(255,253,249,0.75) !important; }
+.dark .dark\:text-cream\/70   { color: rgba(255,253,249,0.70) !important; }
+.dark .dark\:text-gold        { color: #fbbf24 !important; }
+.dark .dark\:text-saffron     { color: #FF9933 !important; }
+.dark .dark\:text-white       { color: #ffffff !important; }
+.dark .dark\:text-darkbrown   { color: #3D2B1F !important; }
+
+/* The most common pattern: text-darkbrown on cards */
+.dark .text-darkbrown       { color: #FFFDF9 !important; }
+.dark .text-darkbrown-light { color: rgba(255,253,249,0.85) !important; }
+.dark .text-darkbrown\/80   { color: rgba(255,253,249,0.80) !important; }
+.dark .text-darkbrown\/50   { color: rgba(255,253,249,0.50) !important; }
+
+/* ----------------------------------------------------------------
+   DARK MODE — BORDERS
+   ---------------------------------------------------------------- */
+.dark .border-sandalwood\/30 { border-color: rgba(255,153,51,0.14) !important; }
+.dark .border-sandalwood\/20 { border-color: rgba(255,153,51,0.10) !important; }
+.dark .border-sandalwood\/10 { border-color: rgba(255,153,51,0.07) !important; }
+.dark .border-cream\/10      { border-color: rgba(255,253,249,0.10) !important; }
+.dark .border-saffron\/20    { border-color: rgba(255,153,51,0.20) !important; }
+.dark .border-saffron\/30    { border-color: rgba(255,153,51,0.30) !important; }
+
+/* ----------------------------------------------------------------
+   DARK MODE — INPUTS
+   ---------------------------------------------------------------- */
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="date"],
+.dark input[type="search"],
+.dark textarea,
+.dark select {
+    background-color: #0f172a !important;
+    color: #FFFDF9 !important;
+    border-color: rgba(255,153,51,0.25) !important;
+}
+.dark input::placeholder,
+.dark textarea::placeholder { color: rgba(255,253,249,0.4) !important; }
+
+/* ----------------------------------------------------------------
+   DARK MODE — NAVIGATION
+   ---------------------------------------------------------------- */
+.dark nav a               { color: #FFFDF9; }
+.dark nav a:hover         { color: #FF9933; }
+
+/* Dropdown menu */
+.dark .group:hover .absolute > div,
+.dark nav .absolute > div {
+    background-color: #1e293b;
+    border-color: rgba(255,153,51,0.15);
+}
+.dark nav .absolute a     { color: #FFFDF9; }
+.dark nav .absolute a:hover { color: #FF9933; background-color: rgba(255,153,51,0.1); }
+
+/* Mobile menu */
+.dark #mobile-menu {
+    background-color: #1e293b;
+    border-color: rgba(255,153,51,0.1);
+}
+.dark #mobile-menu a { color: #FFFDF9; }
+
+/* ----------------------------------------------------------------
+   DARK MODE — CARDS (article, product, tool, chalisa)
+   ---------------------------------------------------------------- */
+.dark article,
+.dark .panchang-widget     { background-color: #1e293b !important; }
+
+/* ----------------------------------------------------------------
+   DARK MODE — SPECIFIC COMPONENTS
+   ---------------------------------------------------------------- */
+
+/* Chalisa frame */
+.dark .chalisa-frame {
+    background: linear-gradient(135deg, #1a2035 0%, #1e293b 100%) !important;
+}
+
+/* Panchang widget */
+.dark .panchang-widget {
+    background-color: #0f172a !important;
+    border-color: rgba(255,153,51,0.25) !important;
+}
+
+/* Red disclaimer / info boxes */
+.dark .bg-red-50 {
+    background-color: rgba(127,29,29,0.15) !important;
+    border-color: rgba(153,27,27,0.3) !important;
+}
+.dark .bg-red-50\/80 {
+    background-color: rgba(127,29,29,0.12) !important;
+}
+.dark .text-red-800 { color: #fca5a5 !important; }
+.dark .border-red-800\/20 { border-color: rgba(252,165,165,0.2) !important; }
+
+/* Sandalwood/cream tinted backgrounds */
+.dark .bg-sandalwood\/20  { background-color: rgba(255,153,51,0.08) !important; }
+.dark .bg-cream-dark\/20  { background-color: rgba(30,41,59,0.3) !important; }
+.dark .bg-saffron-light\/10 { background-color: rgba(255,153,51,0.08) !important; }
+
+/* White overlays on images */
+.dark .bg-white\/90       { background-color: rgba(30,41,59,0.92) !important; }
+.dark .bg-white\/50       { background-color: rgba(30,41,59,0.5) !important; }
+.dark .bg-white\/10       { background-color: rgba(255,255,255,0.07) !important; }
+
+/* Shadow-inner (buttons in cards) */
+.dark .shadow-inner       { box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.4) !important; }
+
+/* ----------------------------------------------------------------
+   DARK MODE — THEME TOGGLE BUTTON
+   ---------------------------------------------------------------- */
+.dark #theme-toggle { background-color: #1e293b; color: #fbbf24; }
+
+/* ----------------------------------------------------------------
+   ANIMATIONS & UTILITIES
+   ---------------------------------------------------------------- */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in-up.visible { opacity: 1; transform: translateY(0); }
+
+.active-timer {
+    border-color: #ff9933 !important;
+    background-color: rgba(255,153,51,0.12) !important;
+    color: #ff9933 !important;
+    font-weight: 700;
+}
+
+.tabular-nums { font-variant-numeric: tabular-nums; }
+.faq-answer   { overflow: hidden; }
+
+/* ----------------------------------------------------------------
+   CUSTOM SCROLLBAR
+   ---------------------------------------------------------------- */
+::-webkit-scrollbar       { width: 8px; }
+::-webkit-scrollbar-track { background: rgba(255,153,51,0.05); }
+::-webkit-scrollbar-thumb { background: rgba(255,153,51,0.3); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,153,51,0.6); }
+
+/* ----------------------------------------------------------------
+   INTERACTIVE ELEMENTS
+   ---------------------------------------------------------------- */
+#back-to-top:hover        { transform: translateY(-2px) !important; }
+#mala-tap-btn:active      { transform: scale(0.93) !important; }
+
+/* ----------------------------------------------------------------
+   SEARCH MODAL
+   ---------------------------------------------------------------- */
+#search-modal             { animation: fadeInModal 0.2s ease; }
+.dark #search-modal .bg-white { background-color: #1e293b !important; }
+.dark #search-modal .text-darkbrown { color: #FFFDF9 !important; }
+.dark #search-modal input  { background-color: #0f172a !important; color: #FFFDF9 !important; }
+@keyframes fadeInModal { from { opacity: 0; } to { opacity: 1; } }
+
+/* ----------------------------------------------------------------
+   PROSE OVERRIDES — single.html article content
+   ---------------------------------------------------------------- */
+.prose h2 {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    color: #3d2b1f;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(227,193,133,0.3);
+}
+.dark .prose h2  { color: #FFFDF9; border-color: rgba(255,153,51,0.2); }
+
+.prose p {
+    margin-bottom: 1.25rem;
+    font-family: Mukta, sans-serif;
+    color: rgba(61,43,31,0.9);
+    line-height: 1.8;
+}
+.dark .prose p   { color: rgba(255,253,249,0.85); }
+
+.prose ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+.prose ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+.prose li {
+    margin-bottom: 0.5rem;
+    font-family: Mukta, sans-serif;
+    color: rgba(61,43,31,0.9);
+}
+.dark .prose li  { color: rgba(255,253,249,0.85); }
+
+/* ----------------------------------------------------------------
+   CHALISA FRAME
+   ---------------------------------------------------------------- */
+.chalisa-frame {
+    background: linear-gradient(135deg, #fff8f2 0%, #fff3e8 100%);
+}
+
+/* ----------------------------------------------------------------
+   FOCUS RINGS
+   ---------------------------------------------------------------- */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #ff9933;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ----------------------------------------------------------------
+   HOVER BORDER FIX
+   ---------------------------------------------------------------- */
+.hover\:border-saffron:hover { border-color: #ff9933 !important; }

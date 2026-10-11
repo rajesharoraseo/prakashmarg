@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/scripture-relationships",
+    "title": "Scripture Relationships",
+    "category": "pm-entities",
+    "icon": "networking",
+    "description": "Displays graph database links to associated Temples and Deities.",
+    "render": "file:./render.php"
+}

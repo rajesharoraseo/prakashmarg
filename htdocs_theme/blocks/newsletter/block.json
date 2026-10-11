@@ -1,0 +1,8 @@
+{
+    "apiVersion": 3,
+    "name": "pm/newsletter",
+    "title": "Newsletter",
+    "category": "pm-homepage",
+    "icon": "email",
+    "render": "file:./render.php"
+}

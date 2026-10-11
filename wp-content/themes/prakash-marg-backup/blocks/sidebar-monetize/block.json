@@ -1,0 +1,10 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pm/sidebar-monetize",
+    "title": "Sidebar Monetize",
+    "category": "pm-blocks",
+    "icon": "money-alt",
+    "description": "Displays relevant ads, store products, and affiliate links.",
+    "render": "file:./render.php"
+}

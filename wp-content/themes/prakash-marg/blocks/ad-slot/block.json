@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "pm/ad-slot",
+  "title": "Ad Slot",
+  "category": "prakash-marg",
+  "icon": "megaphone",
+  "description": "Custom Ad Slot for Client Ads or AdSense.",
+  "attributes": {
+    "adType": {
+      "type": "string",
+      "default": "client"
+    },
+    "clientImageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "clientTargetUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "adsenseCode": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "render": "file:./render.php"
+}

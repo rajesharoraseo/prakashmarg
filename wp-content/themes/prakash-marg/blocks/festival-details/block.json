@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/festival-details",
+    "title": "Festival Details",
+    "category": "pm-entities",
+    "icon": "info",
+    "description": "Displays specific metadata for a Festival (Significance, Rituals).",
+    "render": "file:./render.php"
+}

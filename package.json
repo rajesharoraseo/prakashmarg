@@ -1,0 +1,12 @@
+{
+  "name": "prakash-marg-v2",
+  "version": "2.0.0",
+  "description": "Modern spiritual wellness platform - Production Ready",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/style.css -o ./assets/css/style.css --minify",
+    "watch:css": "tailwindcss -i ./src/style.css -o ./assets/css/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  }
+}

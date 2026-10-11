@@ -1,0 +1,11 @@
+﻿{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Dark Mode",
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--neutral-900)",
+			"text": "var(--wp--preset--color--neutral-0)"
+		}
+	}
+}

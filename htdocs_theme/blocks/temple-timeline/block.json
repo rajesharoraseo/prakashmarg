@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/temple-timeline",
+    "title": "Temple Timeline",
+    "category": "pm-entities",
+    "icon": "backup",
+    "description": "Displays the historical timeline of the temple.",
+    "render": "file:./render.php"
+}

@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pm/deity-details",
+    "title": "Deity Details",
+    "category": "pm-entities",
+    "icon": "info",
+    "description": "Displays specific metadata for a Deity (Core Mantra, Associated Elements).",
+    "render": "file:./render.php"
+}

@@ -1,0 +1,107 @@
+<!-- wp:group {"tagName":"header","className":"site-header","layout":{"type":"constrained"}} -->
+<header class="wp-block-group site-header">
+  
+  <!-- SEARCH OVERLAY -->
+  <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-box">
+      <button class="search-close" onclick="closeSearch()">✕</button>
+      <p style="font-size:12px;color:var(--txs);margin-bottom:10px">🔍 खोजें</p>
+      <form action="/prakashmarg/" method="get" role="search">
+        <input class="search-box-input" type="search" name="s" placeholder="मंत्र, चालीसा, देवता, त्योहार खोजें..." id="searchInput" aria-label="Search">
+        <button type="submit" style="margin-top:10px;width:100%;padding:10px;background:var(--gd);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Mukta',sans-serif">🔍 खोजें</button>
+      </form>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <span style="font-size:11px;color:var(--txs)">लोकप्रिय:</span>
+        <a href="/prakashmarg/?s=हनुमान+चालीसा" style="font-size:11px;color:var(--gm);text-decoration:none;padding:3px 10px;background:var(--sg);border-radius:6px">हनुमान चालीसा</a>
+        <a href="/prakashmarg/?s=आज+का+पंचांग" style="font-size:11px;color:var(--gm);text-decoration:none;padding:3px 10px;background:var(--sg);border-radius:6px">आज का पंचांग</a>
+        <a href="/prakashmarg/?s=दीपावली" style="font-size:11px;color:var(--gm);text-decoration:none;padding:3px 10px;background:var(--sg);border-radius:6px">दीपावली</a>
+        <a href="/prakashmarg/?s=महामृत्युंजय+मंत्र" style="font-size:11px;color:var(--gm);text-decoration:none;padding:3px 10px;background:var(--sg);border-radius:6px">महामृत्युंजय मंत्र</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-inner">
+    <a href="/prakashmarg/" class="logo">
+      <div class="logo-icon">ॐ</div>
+      <div>
+        <span class="logo-text-main">Prakash Marg</span>
+        <span class="logo-text-sub">प्रकाश की ओर एक कदम</span>
+      </div>
+    </a>
+    <nav class="desktop-nav">
+      <a href="/prakashmarg/" class="active">होम</a>
+      <div class="nav-dropdown">
+        <button>ज्ञान ▾</button>
+        <div class="dropdown-menu">
+          <a href="/prakashmarg/blog">📰 Blog &amp; Articles</a>
+          <a href="/prakashmarg/index.php/chalisa-library">📖 चालीसा संग्रह</a>
+          <a href="/prakashmarg/index.php/puja-vidhi">🪔 पूजा विधि</a>
+          <a href="/prakashmarg/index.php/vrat-tyohar">🗓️ व्रत &amp; त्योहार</a>
+        </div>
+      </div>
+      <a href="/prakashmarg/index.php/bhajan">भजन-आरती</a>
+      <a href="/prakashmarg/index.php/quote">सुविचार</a>
+      <div class="nav-dropdown">
+        <button>टूल्स ▾</button>
+        <div class="dropdown-menu">
+          <a href="/prakashmarg/index.php/panchang">📅 पंचांग</a>
+          <a href="/prakashmarg/index.php/rashifal">♈ राशिफल</a>
+          <a href="/prakashmarg/lucky-number">🔢 भाग्यांक</a>
+        </div>
+      </div>
+      <a href="/prakashmarg/index.php/shop" style="color: var(--gol);">🛒 ई-स्टोर</a>
+    </nav>
+    <div class="header-right">
+      <div class="header-search-wrap">
+        <form action="/prakashmarg/" method="get" role="search" class="header-search-form" style="display:flex;align-items:center;background:var(--sg);border:1px solid var(--bdl);border-radius:22px;overflow:hidden;height:36px;">
+          <input class="header-search-input" type="search" name="s" placeholder="खोजें..." id="headerSearch" aria-label="खोजें" autocomplete="off" style="flex:1;padding:0 10px 0 14px;background:transparent;border:none;outline:none;font-size:14px;font-family:'Mukta',sans-serif;height:100%;color:var(--tx);">
+          <button class="header-search-btn" type="submit" aria-label="खोजें" style="flex-shrink:0;width:32px;height:32px;margin:2px;background:var(--gd);border:none;border-radius:50%;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </button>
+        </form>
+      </div>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="mob-menu-btn" id="mobMenuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+  <div class="mob-nav" id="mobNav">
+    <div class="mob-nav-inner">
+      <a href="/prakashmarg/">🏠 होम</a>
+      <a href="/prakashmarg/blog">📰 Blog</a>
+      <a href="/prakashmarg/index.php/chalisa-library">📖 चालीसा संग्रह</a>
+      <a href="/prakashmarg/index.php/puja-vidhi">🪔 पूजा विधि</a>
+      <a href="/prakashmarg/index.php/bhajan">🎵 भजन-आरती</a>
+      <a href="/prakashmarg/index.php/vrat-tyohar">🗓️ व्रत &amp; त्योहार</a>
+      <a href="/prakashmarg/index.php/quote">💬 सुविचार</a>
+      <a href="/prakashmarg/index.php/panchang">📅 पंचांग</a>
+      <a href="/prakashmarg/index.php/rashifal">♈ राशिफल</a>
+      <a href="/prakashmarg/index.php/shop" style="color: var(--gol);">🛒 ई-स्टोर</a>
+    </div>
+  </div>
+</header>
+<!-- /wp:group -->
+
+<!-- wp:html -->
+<!-- TICKER -->
+<div class="ticker-bar">
+  <span class="ticker-label">🔴 LIVE</span>
+  <div class="ticker-scroll-wrap">
+    <div class="ticker-scroll">
+      <span>📅 आज की तिथि: <strong id="t-tithi" style="color:var(--gol)">लोड हो रहा है...</strong></span>
+      <span class="ticker-sep">✦</span>
+      <span>🎉 अगला त्योहार: <strong id="t-festival" style="color:var(--gol)">लोड हो रहा है...</strong></span>
+      <span class="ticker-sep">✦</span>
+      <span>💬 <strong style="color:rgba(255,255,255,.75)">कर्म करो, फल की चिंता मत करो।</strong></span>
+      <span class="ticker-sep">✦</span>
+      <span>🕉️ Prakash Marg — सनातन ज्ञान का पोर्टल</span>
+      <span>📅 आज की तिथि: <strong class="t-tithi-dup" style="color:var(--gol)">—</strong></span>
+      <span class="ticker-sep">✦</span>
+      <span>🎉 अगला त्योहार: <strong class="t-festival-dup" style="color:var(--gol)">—</strong></span>
+      <span class="ticker-sep">✦</span>
+      <span>💬 <strong style="color:rgba(255,255,255,.75)">कर्म करो, फल की चिंता मत करो।</strong></span>
+      <span class="ticker-sep">✦</span>
+      <span>🕉️ Prakash Marg — सनातन ज्ञान का पोर्टल</span>
+    </div>
+  </div>
+</div>
+<!-- /wp:html -->
